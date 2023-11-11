@@ -1,0 +1,19 @@
+HOST := localhost:9090
+
+WEB:
+HOST/my-golf-club
+HOST/my-golf-club/members/list
+HOST/my-golf-club/members/list/active
+HOST/my-golf-club/members/list/add
+HOST/my-golf-club/members/list/update
+HOST/my-golf-club/members/list/delete
+HOST/my-golf-club/users/add
+HOST/swagger-ui/index.html
+
+POSTMAN:
+GET HOST/my-golf-club/api/members
+GET HOST/my-golf-club/api/members?active={boolean}
+GET HOST/my-golf-club/api/members/{int}
+POST HOST/my-golf-club/api/members
+PUT HOST/my-golf-club/api/members/{int}
+DELETE HOST/my-golf-club/api/members/{int}
