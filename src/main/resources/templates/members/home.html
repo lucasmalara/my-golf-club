@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>MyGolfClub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to MyGolfClub</h2>
+        <hr>
+        <h3>
+            Hey, <span sec:authentication="principal.username"></span>!
+        </h3>
+        <br>
+        <div>
+            <span sec:authorize="hasRole('MODERATOR')">
+                <a th:href="@{/my-golf-club/members/add}"
+                   class="btn btn-primary btn-sm mb-3">
+                    &plus; Add Member
+                </a>
+            </span>
+            <span sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/my-golf-club/users/add}"
+                   class="btn btn-primary btn-sm mb-3">
+                    &plus; Add User
+                </a>
+            </span>
+            <span sec:authorize="hasRole('EMPLOYEE')">
+                <a th:href="@{/my-golf-club/members/list}"
+                   class="btn btn-primary btn-sm mb-3">
+                    Members list
+                </a>
+            </span>
+            <span sec:authorize="hasRole('EMPLOYEE')">
+                <a th:href="@{/swagger-ui/index.html}"
+                   class="btn btn-primary btn-sm mb-3">
+                    API Docs
+                </a>
+            </span>
+            <form action="#" th:action="@{/logout}" method="post">
+                <input type="submit" value="Logout"
+                       class="btn btn-secondary btn-sm mb-3">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
