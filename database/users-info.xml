@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This template is hardcoded and is not updated based on database changes -->
+
+<users>
+
+	<user role="EMPLOYEE">
+		<employee username="employee">
+			<password>employee</password>
+			<priveleges>
+				<column name="golf_club_member">
+					<api>
+						<http-method>GET</http-method>
+					</api>
+					<db>
+						<operation>READ</operation>
+					</db>
+				</column>
+			</priveleges>
+		</employee>
+	</user>
+	
+	<user role="MODERATOR">
+		<moderator username="moderator">
+			<password>moderator</password>
+			<priveleges>
+				<column name="golf_club_member">
+				<api>
+					<http-method>GET</http-method>
+					<http-method>POST</http-method>
+				</api>
+				<db>
+					<operation>CREATE</operation>
+					<operation>READ</operation>
+				</db>
+				</column>
+			</priveleges>
+		</moderator>
+	</user>
+	
+	<user role="ADMIN">
+		<admin username="admin">
+			<password>admin</password>
+			<priveleges>
+				<column name="golf_club_member">
+				<api>
+					<http-method>GET</http-method>
+					<http-method>POST</http-method>
+					<http-method>PUT</http-method>
+					<http-method>DELETE</http-method>
+				</api>
+				<db>
+					<operation>CREATE</operation>
+					<operation>READ</operation>
+					<operation>UPDATE</operation>
+					<operation>DELETE</operation>
+				</db>
+				</column>
+				<column name="user">
+					<db>
+						<operation>CREATE</operation>
+					</db>
+				</column>
+			</priveleges>
+		</admin>
+	</user>
+	
+</users>
