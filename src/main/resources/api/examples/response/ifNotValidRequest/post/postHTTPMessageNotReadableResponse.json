@@ -1,0 +1,7 @@
+{
+  "timeStamp": "2023-11-06T21:06:22.65417",
+  "code": 400,
+  "status": "Bad Request",
+  "message": "Required request body is missing: public org.springframework.http.ResponseEntity<org.springframework.hateoas.EntityModel<com.mygolfclub.entity.member.GolfClubMember>> com.mygolfclub.controller.rest.GolfClubMemberController.addMember(com.mygolfclub.entity.member.GolfClubMember)",
+  "path": "uri=/my-golf-club/api/members"
+}

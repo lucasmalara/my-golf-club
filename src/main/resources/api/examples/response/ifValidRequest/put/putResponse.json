@@ -1,0 +1,17 @@
+{
+  "id": 6,
+  "firstName": "Gustavo",
+  "lastName": "Fring",
+  "email": "contact@lospolloshermanos.com",
+  "activeMember": false,
+  "_links": {
+    "self": {
+      "href": "http://localhost:9090/my-golf-club/api/members/6"
+    },
+    "active": {
+      "href": "http://localhost:9090/my-golf-club/api/members?active=false"
+    }
+  }
+}
+
+

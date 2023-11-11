@@ -1,0 +1,10 @@
+{
+  "timeStamp": "2023-11-06T21:06:22.65417",
+  "code": 404,
+  "status": "Not Found",
+  "message": "MyGolfClub member not found by id: 99",
+  "path": "uri=/my-golf-club/api/members/99"
+}
+
+
+

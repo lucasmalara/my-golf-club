@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "firstName": "Emma",
+  "lastName": "Green",
+  "email": "emmagreen@mail.com",
+  "activeMember": true,
+  "_links": {
+    "self": {
+      "href": "http://localhost:9090/my-golf-club/api/members/1"
+    },
+    "active": {
+      "href": "http://localhost:9090/my-golf-club/api/members?active=true"
+    }
+  }
+}
+
+

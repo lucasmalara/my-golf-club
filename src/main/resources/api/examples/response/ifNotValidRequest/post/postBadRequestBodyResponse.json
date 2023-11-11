@@ -1,0 +1,7 @@
+{
+  "timeStamp": "2023-11-06T21:06:22.65417",
+  "code": 400,
+  "status": "Bad Request",
+  "message": "Validation failed for classes [com.mygolfclub.entity.member.GolfClubMember] during persist time for groups [jakarta.validation.groups.Default, ]\nList of constraint violations:[\n\tConstraintViolationImpl{interpolatedMessage='Last name is not valid.', propertyPath=lastName, rootBeanClass=class com.mygolfclub.entity.member.GolfClubMember, messageTemplate='Last name is not valid.'}\n\tConstraintViolationImpl{interpolatedMessage='First name is required.', propertyPath=firstName, rootBeanClass=class com.mygolfclub.entity.member.GolfClubMember, messageTemplate='First name is required.'}\n\tConstraintViolationImpl{interpolatedMessage='Email is not valid.', propertyPath=email, rootBeanClass=class com.mygolfclub.entity.member.GolfClubMember, messageTemplate='Email is not valid.'}\n\tConstraintViolationImpl{interpolatedMessage='Last name must contain between 2 and 45 alphabetic characters.', propertyPath=lastName, rootBeanClass=class com.mygolfclub.entity.member.GolfClubMember, messageTemplate='Last name must contain between 2 and 45 alphabetic characters.'}\n]",
+  "path": "uri=/my-golf-club/api/members"
+}

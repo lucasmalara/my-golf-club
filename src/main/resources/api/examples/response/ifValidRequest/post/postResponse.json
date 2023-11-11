@@ -1,0 +1,16 @@
+{
+  "id": 6,
+  "firstName": "Walter",
+  "lastName": "White",
+  "email": "contact@heisenberg.com",
+  "activeMember": true,
+  "_links": {
+    "self": {
+      "href": "http://localhost:9090/my-golf-club/api/members/6"
+    },
+    "active": {
+      "href": "http://localhost:9090/my-golf-club/api/members?active=true"
+    }
+  }
+}
+
