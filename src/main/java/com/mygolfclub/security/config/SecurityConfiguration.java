@@ -59,8 +59,8 @@ public class SecurityConfiguration {
                 .httpBasic(Customizer.withDefaults());
         return http.build();
     }
+
     @Bean
-    @Order
     public SecurityFilterChain viewFilterChain(HttpSecurity http,
                                                AuthenticationSuccessHandler handler) throws Exception {
         http.authorizeHttpRequests(authorize -> authorize

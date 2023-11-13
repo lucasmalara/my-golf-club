@@ -25,7 +25,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(MEMBERS_API)
+@RequestMapping(API)
 @Tag(name = "GolfClubMembers")
 public class GolfClubMemberController {
 
@@ -48,7 +48,7 @@ public class GolfClubMemberController {
                     @ApiResponse(ref = "forbidden", responseCode = "403")
             }
     )
-    @GetMapping
+    @GetMapping("/members")
     public CollectionModel<EntityModel<GolfClubMember>> getMembers(
             @RequestParam(value = "active", required = false) Boolean isActiveMember) {
         Stream<GolfClubMember> memberStream = memberService.findAll().stream();
@@ -74,7 +74,7 @@ public class GolfClubMemberController {
                     @ApiResponse(ref = "forbiddenById", responseCode = "403")
             }
     )
-    @GetMapping("/{memberId}")
+    @GetMapping("/members/{memberId}")
     public EntityModel<GolfClubMember> getMember(@PathVariable(value = "memberId") int id) {
         return assembler.toModel(memberService.findById(id));
     }
@@ -89,7 +89,7 @@ public class GolfClubMemberController {
             }
 
     )
-    @PostMapping
+    @PostMapping("/members")
     public ResponseEntity<EntityModel<GolfClubMember>> addMember(
             @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "Member to add",
@@ -118,7 +118,7 @@ public class GolfClubMemberController {
                     @ApiResponse(ref = "forbiddenById", responseCode = "403")
             }
     )
-    @PutMapping("/{memberId}")
+    @PutMapping("/members/{memberId}")
     public ResponseEntity<EntityModel<GolfClubMember>> updateMember(
             @PathVariable(value = "memberId") int id,
             @io.swagger.v3.oas.annotations.parameters.RequestBody(
@@ -159,7 +159,7 @@ public class GolfClubMemberController {
                     @ApiResponse(ref = "forbiddenById", responseCode = "403")
             }
     )
-    @DeleteMapping("/{memberId}")
+    @DeleteMapping("/members/{memberId}")
     public ResponseEntity<Void> deleteMember(@PathVariable(value = "memberId") int id) {
         memberService.deleteById(id);
         return ResponseEntity.noContent().build();
