@@ -62,7 +62,8 @@ public class MyGolfClubController {
         if (!result.hasErrors()) {
             memberService.save(model);
             return "redirect:" + HOME + "/members/list";
-        } else return PREFIX_DIR + SAVE_MEMBER_FILE;
+        }
+        return PREFIX_DIR + SAVE_MEMBER_FILE;
     }
 
     @GetMapping("/members/delete")

@@ -24,13 +24,13 @@ public class OpenAPIConfig {
 
     @Bean
     public OpenAPI openAPI() {
-        // Responses setup:
         final String resourcesPath = "src/main/resources/";
         final String responsePath = resourcesPath + "api/examples/response/";
         final String validResponsePath = responsePath + "ifValidRequest/";
         final String notValidResponsePath = responsePath + "ifNotValidRequest/";
         final String badRequestPhrase = "Bad Request";
 
+        // Responses setup:
         // First valid:
         // GET
         ApiResponse get = apiResponse(
@@ -80,7 +80,8 @@ public class OpenAPIConfig {
                 FileReader.readToString(notValidResponsePath + "by/id/forbiddenByIdResponse.json"),
                 "Forbidden"
         );
-        // SETUP MULTIPLE EXAMPLES OF RESPONSE
+
+        // SETUP MULTIPLE EXAMPLES OF RESPONSE:
         // POST
         var mapOfNotValid =
                 Map.of("if invalid request body",
@@ -89,6 +90,7 @@ public class OpenAPIConfig {
                         FileReader.readToString(notValidResponsePath + "post/postHTTPMessageNotReadableResponse.json")
                 );
         ApiResponse postNotValid = apiResponse(mapOfNotValid, badRequestPhrase);
+
         // PUT
         mapOfNotValid =
                 Map.of("if invalid request body",

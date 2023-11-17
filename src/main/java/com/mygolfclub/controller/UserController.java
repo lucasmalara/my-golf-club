@@ -36,12 +36,11 @@ public class UserController {
                            Model model) {
         if (userService.findByUserName(userModel.getUsername()) != null) {
             model.addAttribute("alreadyTaken", "User already exists.");
-        } else {
-            if (!result.hasErrors()) {
-                userService.save(userModel);
-                model.addAttribute("hasBeenAdded", "User has been added.");
-                return "add-user-success";
-            }
+        }
+        if (!result.hasErrors()) {
+            userService.save(userModel);
+            model.addAttribute("hasBeenAdded", "User has been added.");
+            return "add-user-success";
         }
         return "add-user";
     }

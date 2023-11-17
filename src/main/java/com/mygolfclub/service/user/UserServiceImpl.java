@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService, UserMapper {
         }
         // return User class identified by a package name to avoid confusion with User entity class
         // (com.mygolfclub.entity.user.User)
-        else return org.springframework.security.core.userdetails.User
+        return org.springframework.security.core.userdetails.User
                 .builder()
                 .username(byUsername.getUsername())
                 .password(byUsername.getPassword())
