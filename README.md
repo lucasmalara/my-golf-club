@@ -91,24 +91,26 @@ Recommendations: MySQL Workbench 8 or other GUI database manager.
 
 1. Open a terminal in your desired location.
 
-2. Define a directory for a project.
+- (Optional) Define a parent directory for a project.
 
 Linux, macOS:
 
 ```shell
-  mkdir my-golf-club && cd "$_"
+  mkdir parent-dir && cd "$_"
 ```
 
 Windows/Powershell:
 
 ```shell
-  ($dir = "my-golf-club") -and (mkdir $dir) -and (cd $dir)
+  ($dir = "parent-dir") -and (mkdir $dir) -and (cd $dir)
 ```
 
-3. Clone repository:
+> You can use name of your choice instead.
+
+2. Clone repository:
 
 ```shell
-  git pull https://github.com/lucasmalara/my-golf-club.git
+  git clone https://github.com/lucasmalara/my-golf-club.git
 ```
 
 - or using GitHub CLI:
@@ -116,6 +118,14 @@ Windows/Powershell:
 ```shell
   gh repo clone lucasmalara/my-golf-club
 ```
+
+3. Open main directory of a project
+
+```shell
+  cd my-golf-club
+```
+
+> Name of this directory is inherited from this repository name.
 
 4. Run with Gradle:
 
@@ -125,7 +135,7 @@ Windows/Powershell:
 
 - or if your environment variable `JAVA_HOME` uses jdk lower than 17, 
 or you do not have it, then you should add: `-D org.gradle.java.home='$JDK_PATH'`,
-where `$JDK_PATH` is an absolute path to a root folder of jdk 17+.
+where `$JDK_PATH` is an absolute path to a root folder of jdk 17 or 17+.
 
 ```shell
   gradle bootRun -D org.gradle.java.home='$JDK_PATH'
