@@ -158,35 +158,57 @@ Following cases have to be followed:
 
 ![Image contains login page.](./screenshots/No-Auth/login-page.jpg "Login page")
 
+<br>
+
 - Message if you provide invalid credentials
 
 ![Image contains login page after providing invalid credentials.](./screenshots/No-Auth/bad-credentials.jpg "Login page - invalid credentials")
+
+<br>
 
 ### 2. Employee Role
 
 - Home Page
 
-![Image contains home page.](screenshots "Home Page") /TODO
+![Image contains home page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dhome-page.jpg "Home Page")
+
+<br>
 
 - List Of Members
 
-![Image contains list of members page.](screenshots "List Of Members") /TODO
+![Image contains list of members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dmembers-list.jpg "List Of Members")
+
+<br>
+
+- List of Active Members
+
+![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dactive-members-list.jpg "List Of Active Members")
+
+<br>
 
 - Add Member
 
-![Image contains add member page.](screenshots "Add Member") /TODO
+![Image contains add member page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dnot-authorized-when-add-member.jpg "Add Member")
+
+<br>
 
 - Update Member
 
-![Image contains update member page.](screenshots "Update Member") /TODO
+![Image contains update member page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dnot-authorized-when-update-member.jpg "Update Member")
+
+<br>
 
 - Delete Member
 
-![Image contains delete member page.](screenshots "Delete Member") /TODO
+![Image contains delete member page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dnot-authorized-when-delete-member.jpg "Delete Member")
+
+<br>
 
 - Add User
 
-![Image contains add user page.](screenshots "Add User") /TODO
+![Image contains add user page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dnot-authorized-when-add-user.jpg "Add User")
+
+<br>
 
 - API Docs
 
