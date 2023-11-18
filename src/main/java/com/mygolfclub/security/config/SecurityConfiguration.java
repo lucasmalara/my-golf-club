@@ -68,7 +68,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HOME, HOME + "/members/list/**")
                         .hasRole(EMPLOYEE)
                         // CREATE member
-                        .requestMatchers(HOME + "/members/add")
+                        .requestMatchers(HOME + "/members/add", HOME + "/members/save")
                         .hasRole(MODERATOR)
                         // Global access
                         .requestMatchers(HOME + "/members/**", HOME + "/users/**")
