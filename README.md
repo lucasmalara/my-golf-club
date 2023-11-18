@@ -168,6 +168,9 @@ Following cases have to be followed:
    - List Of Members
    - List of Active Members
    - Add Member
+     - Form
+     - Success
+     - Invalid Data Provided
    - Update Member
    - Delete Member
    - Add User
@@ -179,9 +182,18 @@ Following cases have to be followed:
    - List Of Members
    - List of Active Members
    - Add Member
+      - Form
+      - Success
+      - Invalid Data Provided
    - Update Member
+      - Form
+      - Success
+      - Invalid Data Provided
    - Delete Member
    - Add User
+      - Form
+      - Success
+      - Invalid Data Provided
 
 
 5. Any authenticated
@@ -267,6 +279,7 @@ Following cases have to be followed:
 <br>
 
 - Add Member
+  - Form
 
 ![Image contains add member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5Dadd-member.jpg "Add Member")
 
@@ -294,27 +307,46 @@ Following cases have to be followed:
 
 - Home Page
 
-![Image contains home page when logged as admin.](screenshots "Home Page") /TODO
+![Image contains home page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dhome-page.jpg "Home Page")
+
+<br>
 
 - List Of Members
 
-![Image contains list of members page when logged as admin.](screenshots "List Of Members") /TODO
+![Image contains list of members page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dmembers-list.jpg "List Of Members")
+
+<br>
+
+- List Of Active Members
+
+![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dactive-members-list.jpg "List Of Active Members")
+
+<br>
 
 - Add Member
+  - Form
 
-![Image contains add member page when logged as admin.](screenshots "Add Member") /TODO
+![Image contains add member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/%5BA%5Dadd-member.jpg "Add Member")
+
+<br>
 
 - Update Member
+  - Form
 
-![Image contains update member page when logged as admin.](screenshots "Update Member") /TODO
+![Image contains update member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5Dupdate-member.jpg "Update Member")
+
+<br>
 
 - Delete Member
 
 ![Image contains delete member page when logged as admin.](screenshots "Delete Member") /TODO
 
-- Add User
+<br>
 
-![Image contains add user page when logged as admin.](screenshots "Add User") /TODO
+- Add User
+  - Form
+
+![Image contains add user page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5Dadd-user.jpg "Add User")
 
 ## API Reference
 
