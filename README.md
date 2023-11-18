@@ -146,9 +146,45 @@ where `$JDK_PATH` is an absolute path to a root folder of jdk 17 or 17+.
 Following cases have to be followed:
 
 1. Unauthenticated
+
+   - Login Page
+   - Login Page if you provide invalid credentials
+
+
 2. Authenticated with Employee role
+
+   - Home Page
+   - List Of Members
+   - List of Active Members
+   - Add Member
+   - Update Member
+   - Delete Member
+   - Add User
+
+
 3. Authenticated with Moderator role
+
+   - Home Page
+   - List Of Members
+   - List of Active Members
+   - Add Member
+   - Update Member
+   - Delete Member
+   - Add User
+
+
 4. Authenticated with Admin role
+
+   - Home Page
+   - List Of Members
+   - List of Active Members
+   - Add Member
+   - Update Member
+   - Delete Member
+   - Add User
+
+
+5. Any authenticated
 
 > If you do not authenticate you will be redirected to a login page.
 
@@ -160,7 +196,7 @@ Following cases have to be followed:
 
 <br>
 
-- Message if you provide invalid credentials
+- Login Page if you provide invalid credentials
 
 ![Image contains login page after providing invalid credentials.](./screenshots/No-Auth/bad-credentials.jpg "Login page - invalid credentials")
 
@@ -210,69 +246,75 @@ Following cases have to be followed:
 
 <br>
 
-- API Docs
-
-/TODO
-
 ### 3. Moderator Role
 
 - Home Page
 
-![Image contains home page.](screenshots "Home Page") /TODO
+![Image contains home page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dhome-page.jpg "Home Page")
+
+<br>
 
 - List Of Members
 
-![Image contains list of members page.](screenshots "List Of Members") /TODO
+![Image contains list of members page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dmembers-list.jpg "List Of Members")
+
+<br>
+
+- List Of Active Members
+
+![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dactive-members-list.jpg "List Of Active Members")
+
+<br>
 
 - Add Member
 
-![Image contains add member page.](screenshots "Add Member") /TODO
+![Image contains add member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5Dadd-member.jpg "Add Member")
+
+<br>
 
 - Update Member
 
-![Image contains update member page.](screenshots "Update Member") /TODO
+![Image contains update member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dnot-authorized-when-update-member.jpg  "Update Member")
+
+<br>
 
 - Delete Member
 
-![Image contains delete member page.](screenshots "Delete Member") /TODO
+![Image contains delete member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dnot-authorized-when-delete-member.jpg "Delete Member")
+
+<br>
 
 - Add User
 
-![Image contains add user page.](screenshots "Add User") /TODO
+![Image contains add user page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dnot-authorized-when-add-user.jpg "Add User")
 
-- API Docs
-
-/TODO
+<br>
 
 ### 4. Admin Role
 
 - Home Page
 
-![Image contains home page.](screenshots "Home Page") /TODO
+![Image contains home page when logged as admin.](screenshots "Home Page") /TODO
 
 - List Of Members
 
-![Image contains list of members page.](screenshots "List Of Members") /TODO
+![Image contains list of members page when logged as admin.](screenshots "List Of Members") /TODO
 
 - Add Member
 
-![Image contains add member page.](screenshots "Add Member") /TODO
+![Image contains add member page when logged as admin.](screenshots "Add Member") /TODO
 
 - Update Member
 
-![Image contains update member page.](screenshots "Update Member") /TODO
+![Image contains update member page when logged as admin.](screenshots "Update Member") /TODO
 
 - Delete Member
 
-![Image contains delete member page.](screenshots "Delete Member") /TODO
+![Image contains delete member page when logged as admin.](screenshots "Delete Member") /TODO
 
 - Add User
 
-![Image contains add user page.](screenshots "Add User") /TODO
-
-- API Docs
-
-/TODO
+![Image contains add user page when logged as admin.](screenshots "Add User") /TODO
 
 ## API Reference
 
