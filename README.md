@@ -145,48 +145,24 @@ where `$JDK_PATH` is an absolute path to a root folder of jdk 17 or 17+.
 
 Following cases have to be followed:
 
-- Unauthenticated
-- Authenticated with Employee role
-- Authenticated with Moderator role
-- Authenticated with Admin role
+1. Unauthenticated
+2. Authenticated with Employee role
+3. Authenticated with Moderator role
+4. Authenticated with Admin role
 
 > If you do not authenticate you will be redirected to a login page.
 
+### 1. Unauthenticated
+
 - Login Page
 
-![Image contains login page.](screenshots "Login page") /TODO
+![Image contains login page.](./screenshots/No-Auth/login-page.jpg "Login page")
 
-### Admin Role
+- Message if you provide invalid credentials
 
-- Home Page
+![Image contains login page after providing invalid credentials.](./screenshots/No-Auth/bad-credentials.jpg "Login page - invalid credentials")
 
-![Image contains home page.](screenshots "Home Page") /TODO
-
-- List Of Members
-
-![Image contains list of members page.](screenshots "List Of Members") /TODO
-
-- Add Member
-
-![Image contains add member page.](screenshots "Add Member") /TODO
-
-- Update Member
-
-![Image contains update member page.](screenshots "Update Member") /TODO
-
-- Delete Member
-
-![Image contains delete member page.](screenshots "Delete Member") /TODO
-
-- Add User
-
-![Image contains add user page.](screenshots "Add User") /TODO
-
-- API Docs
-
-/TODO
-
-### Moderator Role
+### 2. Employee Role
 
 - Home Page
 
@@ -216,7 +192,37 @@ Following cases have to be followed:
 
 /TODO
 
-### Employee Role
+### 3. Moderator Role
+
+- Home Page
+
+![Image contains home page.](screenshots "Home Page") /TODO
+
+- List Of Members
+
+![Image contains list of members page.](screenshots "List Of Members") /TODO
+
+- Add Member
+
+![Image contains add member page.](screenshots "Add Member") /TODO
+
+- Update Member
+
+![Image contains update member page.](screenshots "Update Member") /TODO
+
+- Delete Member
+
+![Image contains delete member page.](screenshots "Delete Member") /TODO
+
+- Add User
+
+![Image contains add user page.](screenshots "Add User") /TODO
+
+- API Docs
+
+/TODO
+
+### 4. Admin Role
 
 - Home Page
 
