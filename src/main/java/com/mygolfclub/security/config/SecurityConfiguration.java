@@ -65,13 +65,13 @@ public class SecurityConfiguration {
                                                AuthenticationSuccessHandler handler) throws Exception {
         http.authorizeHttpRequests(authorize -> authorize
                         // HOME PAGE & READ members
-                        .requestMatchers(HOME, HOME + "members/list/**")
+                        .requestMatchers(HOME, HOME + "/members/list/**")
                         .hasRole(EMPLOYEE)
                         // CREATE member
-                        .requestMatchers(HOME + "members/add")
+                        .requestMatchers(HOME + "/members/add")
                         .hasRole(MODERATOR)
                         // Global access
-                        .requestMatchers(HOME + "members/**", HOME + "/users/**")
+                        .requestMatchers(HOME + "/members/**", HOME + "/users/**")
                         .hasRole(ADMIN)
                         .anyRequest().authenticated())
                 .formLogin(form -> form
