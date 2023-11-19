@@ -1,5 +1,12 @@
 
-# THIS README FILE IS STILL UNDER THE DEVELOPMENT.
+<div align="center">
+    <h1>THIS README FILE IS STILL UNDER THE DEVELOPMENT.</h1>
+    <code>TODO: Add a screenshot for a case where it is shown where to click to go to see an API documentation.</code> 
+    <br>
+    <code>TODO: Add screenshots for cases when user provide invalid data.</code>
+    <br>
+    <code>TODO: Add a screenshot for a case when user tries to visit not existing page.</code>
+</div>
 
 # MyGolfClub
 
@@ -171,6 +178,9 @@ Following cases have to be followed:
      - Form
      - Success
      - Invalid Data Provided
+       - First name
+       - Last name
+       - Email
    - Update Member
    - Delete Member
    - Add User
@@ -185,30 +195,43 @@ Following cases have to be followed:
       - Form
       - Success
       - Invalid Data Provided
+        - First name
+        - Last name
+        - Email
    - Update Member
       - Form
       - Success
       - Invalid Data Provided
+        - First name
+        - Last name
+        - Email
    - Delete Member
    - Add User
       - Form
       - Success
       - Invalid Data Provided
+        - Username
+        - Password
 
 
 5. Any authenticated
 
+   - Invalid URL Provided
+
+
 > If you do not authenticate you will be redirected to a login page.
+
+<br>
 
 ### 1. Unauthenticated
 
-- Login Page
+- **Login Page**
 
 ![Image contains login page.](./screenshots/No-Auth/login-page.jpg "Login page")
 
 <br>
 
-- Login Page if you provide invalid credentials
+- **Login Page if you provide invalid credentials**
 
 ![Image contains login page after providing invalid credentials.](./screenshots/No-Auth/bad-credentials.jpg "Login page - invalid credentials")
 
@@ -216,135 +239,135 @@ Following cases have to be followed:
 
 ### 2. Employee Role
 
-- Home Page
+- **Home Page**
 
 ![Image contains home page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dhome-page.jpg "Home Page")
 
 <br>
 
-- List Of Members
+- **List Of Members**
 
 ![Image contains list of members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dmembers-list.jpg "List Of Members")
 
 <br>
 
-- List of Active Members
+- **List of Active Members**
 
 ![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dactive-members-list.jpg "List Of Active Members")
 
 <br>
 
-- Add Member
+- **Add Member**
 
 ![Image contains add member page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dnot-authorized-when-add-member.jpg "Add Member")
 
 <br>
 
-- Update Member
+- **Update Member**
 
-![Image contains update member page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dnot-authorized-when-update-member.jpg "Update Member")
-
-<br>
-
-- Delete Member
-
-![Image contains delete member page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dnot-authorized-when-delete-member.jpg "Delete Member")
+![Image contains update member page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-update-member.jpg "Update Member")
 
 <br>
 
-- Add User
+- **Delete Member**
 
-![Image contains add user page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dnot-authorized-when-add-user.jpg "Add User")
+![Image contains delete member page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-delete-member.jpg "Delete Member")
+
+<br>
+
+- **Add User**
+
+![Image contains add user page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-add-user.jpg "Add User")
 
 <br>
 
 ### 3. Moderator Role
 
-- Home Page
+- **Home Page**
 
 ![Image contains home page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dhome-page.jpg "Home Page")
 
 <br>
 
-- List Of Members
+- **List Of Members**
 
 ![Image contains list of members page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dmembers-list.jpg "List Of Members")
 
 <br>
 
-- List Of Active Members
+- **List Of Active Members**
 
 ![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dactive-members-list.jpg "List Of Active Members")
 
 <br>
 
-- Add Member
-  - Form
+- **Add Member**
+  - **Form**
 
 ![Image contains add member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5Dadd-member.jpg "Add Member")
 
 <br>
 
-- Update Member
+- **Update Member**
 
-![Image contains update member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dnot-authorized-when-update-member.jpg  "Update Member")
-
-<br>
-
-- Delete Member
-
-![Image contains delete member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dnot-authorized-when-delete-member.jpg "Delete Member")
+![Image contains update member page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-update-member.jpg  "Update Member")
 
 <br>
 
-- Add User
+- **Delete Member**
 
-![Image contains add user page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dnot-authorized-when-add-user.jpg "Add User")
+![Image contains delete member page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-delete-member.jpg "Delete Member")
+
+<br>
+
+- **Add User**
+
+![Image contains add user page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-add-user.jpg "Add User")
 
 <br>
 
 ### 4. Admin Role
 
-- Home Page
+- **Home Page**
 
 ![Image contains home page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dhome-page.jpg "Home Page")
 
 <br>
 
-- List Of Members
+- **List Of Members**
 
 ![Image contains list of members page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dmembers-list.jpg "List Of Members")
 
 <br>
 
-- List Of Active Members
+- **List Of Active Members**
 
 ![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dactive-members-list.jpg "List Of Active Members")
 
 <br>
 
-- Add Member
-  - Form
+- **Add Member**
+  - **Form**
 
 ![Image contains add member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/%5BA%5Dadd-member.jpg "Add Member")
 
 <br>
 
-- Update Member
-  - Form
+- **Update Member**
+  - **Form**
 
 ![Image contains update member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5Dupdate-member.jpg "Update Member")
 
 <br>
 
-- Delete Member
+- **Delete Member**
 
 ![Image contains delete member page when logged as admin.](screenshots "Delete Member") /TODO
 
 <br>
 
-- Add User
-  - Form
+- **Add User**
+  - **Form**
 
 ![Image contains add user page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5Dadd-user.jpg "Add User")
 
