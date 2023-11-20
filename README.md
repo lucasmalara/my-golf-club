@@ -92,10 +92,10 @@ Read further for more details.
         1. [x] ~~First name invalid~~
         2. [x] ~~Last name invalid~~
         3. [x] ~~Email invalid~~
-    2. [ ] Admin
+    2. [x] ~~Admin~~
         1. [x] ~~First name invalid~~
         2. [x] ~~Last name invalid~~
-        3. [ ] Email invalid
+        3. [x] ~~Email invalid~~
 
 
 7. [ ] TODO: Add screenshots for cases when admin provide invalid user data:
@@ -473,7 +473,15 @@ _// TODO: images here_
 
 - **Email invalid**
 
-_// TODO: images here_
+![Image contains add member page with email required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/EMAIL/%5BA%5D_email-is-required.jpg "Email is required")
+
+![Image contains add member page with email required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/EMAIL/%5BA%5D_email-is-required-include-at.jpg "Email is required, @ is required.")
+
+![Image contains add member page with email required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/EMAIL/%5BA%5D_email-is-required-include-part-following-at.jpg "Email is required, missing part following @.")
+
+![Image contains add member page with email not valid and length error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/EMAIL/%5BA%5D_email-not-valid-length.jpg "Email is not valid and length out of bounds.")
+
+![Image contains add member page with email not valid error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/EMAIL/%5BA%5D_email-not-valid.jpg "Email is not valid.")
 
 <br>
 
