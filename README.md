@@ -94,7 +94,7 @@ Read further for more details.
         3. [x] ~~Email invalid~~
     2. [ ] Admin
         1. [x] ~~First name invalid~~
-        2. [ ] Last name invalid
+        2. [x] ~~Last name invalid~~
         3. [ ] Email invalid
 
 
@@ -463,7 +463,11 @@ _// TODO: images here_
 
 - **Last name invalid**
 
-_// TODO: images here_
+![Image contains add member page with last name required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/LAST-NAME/%5BA%5D_last-name-is-required.jpg "Last name is required")
+
+![Image contains add member page with last name not valid error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/LAST-NAME/%5BA%5D_last-name-not-valid.jpg "Last name not valid")
+
+![Image contains add member page with last name not valid and length error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/LAST-NAME/%5BA%5D_last-name-not-valid-length.jpg "Last name not valid and length out of bounds")
 
 <br>
 
