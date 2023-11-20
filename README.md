@@ -356,9 +356,13 @@ Following cases have to be followed:
 
 ![Image contains add member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5Dadd-member.jpg "Add Member")
 
+<br>
+
 - **Success**
 
 _// TODO: images here_
+
+<br>
 
 - **Invalid Data Provided** - `/my-golf-club/members/save`
 - **First name invalid**
@@ -369,6 +373,8 @@ _// TODO: images here_
 
 ![Image contains add member page with first name not valid and length error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BM%5D_first-name-not-valid-length.jpg "First name not valid and length out of bounds")
 
+<br>
+
 - **Last name invalid**
 
 ![Image contains add member page with last name required error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/LAST-NAME/%5BM%5D_last-name-is-required.jpg "Last name is required")
@@ -376,6 +382,8 @@ _// TODO: images here_
 ![Image contains add member page with last name not valid error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/LAST-NAME/%5BM%5D_last-name-not-valid.jpg "Last name not valid")
 
 ![Image contains add member page with last name not valid and length error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/LAST-NAME/%5BM%5D_last-name-not-valid-length.jpg "Last name not valid and length out of bounds")
+
+<br>
 
 - **Email invalid**
 
@@ -385,7 +393,9 @@ _// TODO: images here_
 
 ![Image contains add member page with email required error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/EMAIL/%5BM%5D_email-is-required-include-part-following-at.jpg "Email is required, missing part following @.")
 
-![Image contains add member page with email not valid error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/EMAIL/%5BM%5D_email-not-valid-length.jpg "Email is not valid and length out of bounds.")
+![Image contains add member page with email not valid and length error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/EMAIL/%5BM%5D_email-not-valid-length.jpg "Email is not valid and length out of bounds.")
+
+![Image contains add member page with email not valid error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/EMAIL/%5BM%5D_email-not-valid.jpg "Email is not valid.")
 
 <br>
 
@@ -432,18 +442,26 @@ _// TODO: images here_
 
 ![Image contains add member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/%5BA%5D_add-member.jpg "Add Member")
 
+<br>
+
 - **Success**
 
 _// TODO: images here_
+
+<br>
 
 - **Invalid Data Provided** - `/my-golf-club/members/save`
 - **First name invalid**
 
 _// TODO: images here_
 
+<br>
+
 - **Last name invalid**
 
 _// TODO: images here_
+
+<br>
 
 - **Email invalid**
 
@@ -456,6 +474,8 @@ _// TODO: images here_
 
 ![Image contains update member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5D_update-member.jpg "Update Member")
 
+<br>
+
 - **Success**
 
 _// TODO: images here_
@@ -465,9 +485,13 @@ _// TODO: images here_
 
 _// TODO: images here_
 
+<br>
+
 - **Last name invalid**
 
 _// TODO: images here_
+
+<br>
 
 - **Email invalid**
 
@@ -486,6 +510,8 @@ _// TODO: images here_
 
 ![Image contains add user page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5D_add-user.jpg "Add User")
 
+<br>
+
 - **Success**
 
 _// TODO: images here_
@@ -494,6 +520,8 @@ _// TODO: images here_
 - **Username invalid**
 
 _// TODO: images here_
+
+<br>
 
 - **Password invalid**
 
