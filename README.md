@@ -1,12 +1,9 @@
 
-<div align="center">
-    <h1>THIS README FILE IS STILL UNDER THE DEVELOPMENT.</h1>
-    <code>TODO: Add a screenshot for a case where it is shown where to click to go to see an API documentation.</code> 
-    <br>
-    <code>TODO: Add screenshots for cases when user provide invalid data.</code>
-    <br>
-    <code>TODO: Add a screenshot for a case when user tries to visit not existing page.</code>
-</div>
+# THIS README FILE IS STILL UNDER THE DEVELOPMENT. 
+
+**[SEE TODO LIST](#todo-list)**
+
+<hr>
 
 # MyGolfClub
 
@@ -27,11 +24,12 @@ Read further for more details.
 
 ## Table Of Content
 
-- Features
-- Project Details
-- Run Project From Source
-- Screenshots
-- API Reference
+- [Features](#features)
+- [Project Details](#project-details)
+- [TODO List](#todo-list)
+- [Run Project From Source](#run-project-from-source)
+- [Screenshots](#screenshots)
+- [API Reference](#api-reference)
 
 ## Features
 
@@ -41,6 +39,10 @@ Read further for more details.
 - RESTful API for extensibility
 - CRUD operations support
 - Included SQL scripts for creation of user, database, tables and records
+
+<div align="right">
+    <a href="#table-of-content">Go back to the Table Of Content</a>
+</div>
 
 ## Project Details
 
@@ -62,6 +64,50 @@ Read further for more details.
 |       Spring Boot Validation        |     3.1.5     | 
 |               Lombok                |    1.18.30    |
 | SpringDoc OpenAPI Starter WebMVC UI |     2.2.0     |  
+
+<div align="right">
+    <a href="#table-of-content">Go back to the Table Of Content</a>
+</div>
+
+## TODO List
+
+1. [ ] TODO: Add a screenshot for a case where it is shown where to click to go to see an API documentation.
+
+
+2. [ ] TODO: Add a screenshot for a case where member was successfully added.
+
+
+3. [ ] TODO: Add a screenshot for a case where member was successfully modified.
+
+
+4. [ ] TODO: Add a screenshot for a case where member was successfully removed.
+
+
+5. [ ] TODO: Add a screenshot for a case where user was successfully added.
+
+
+6. [ ] TODO: Add screenshots for cases when user provide invalid member data:
+
+    1. [ ] Moderator
+        1. [ ] First name invalid
+        2. [ ] Last name invalid
+        3. [ ] Email invalid
+    2. [ ] Admin
+        1. [ ] First name invalid
+        2. [ ] Last name invalid
+        3. [ ] Email invalid
+
+
+7. [ ] TODO: Add screenshots for cases when admin provide invalid user data:
+    1. [ ] Username invalid
+    2. [ ] Password invalid
+
+
+8. [ ] TODO: Add a screenshot for a case when user tries to visit not existing page.
+
+<div align="right">
+    <a href="#table-of-content">Go back to the Table Of Content</a>
+</div>
 
 ## Run Project From Source
 
@@ -148,6 +194,10 @@ where `$JDK_PATH` is an absolute path to a root folder of jdk 17 or 17+.
   gradle bootRun -D org.gradle.java.home='$JDK_PATH'
 ```
 
+<div align="right">
+    <a href="#table-of-content">Go back to the Table Of Content</a>
+</div>
+
 ## Screenshots
 
 Following cases have to be followed:
@@ -225,13 +275,13 @@ Following cases have to be followed:
 
 ### 1. Unauthenticated
 
-- **Login Page**
+- **Login Page** - `/login`
 
 ![Image contains login page.](./screenshots/No-Auth/login-page.jpg "Login page")
 
 <br>
 
-- **Login Page if you provide invalid credentials**
+- **Login Page if you provide invalid credentials** - `/login?error`
 
 ![Image contains login page after providing invalid credentials.](./screenshots/No-Auth/bad-credentials.jpg "Login page - invalid credentials")
 
@@ -239,137 +289,205 @@ Following cases have to be followed:
 
 ### 2. Employee Role
 
-- **Home Page**
+- **Home Page** - `/my-golf-club`
 
 ![Image contains home page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dhome-page.jpg "Home Page")
 
 <br>
 
-- **List Of Members**
+- **List Of Members** - `/my-golf-club/members/list`
 
 ![Image contains list of members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dmembers-list.jpg "List Of Members")
 
 <br>
 
-- **List of Active Members**
+- **List of Active Members** - `/my-golf-club/members/list/active`
 
 ![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dactive-members-list.jpg "List Of Active Members")
 
 <br>
 
-- **Add Member**
+- **Add Member** - `/my-golf-club/members/add`
 
-![Image contains add member page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dnot-authorized-when-add-member.jpg "Add Member")
-
-<br>
-
-- **Update Member**
-
-![Image contains update member page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-update-member.jpg "Update Member")
+![Image contains add member page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Add Member")
 
 <br>
 
-- **Delete Member**
+- **Update Member** - `/my-golf-club/members/update?memberId=1`
 
-![Image contains delete member page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-delete-member.jpg "Delete Member")
+![Image contains update member page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Update Member")
 
 <br>
 
-- **Add User**
+- **Delete Member** - `/my-golf-club/members/delete?memberId=1`
 
-![Image contains add user page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-add-user.jpg "Add User")
+![Image contains delete member page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Delete Member")
+
+<br>
+
+- **Add User** - `/my-golf-club/users/add`
+
+![Image contains add user page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Add User")
 
 <br>
 
 ### 3. Moderator Role
 
-- **Home Page**
+- **Home Page** - `/my-golf-club`
 
 ![Image contains home page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dhome-page.jpg "Home Page")
 
 <br>
 
-- **List Of Members**
+- **List Of Members** - `/my-golf-club/members/list`
 
 ![Image contains list of members page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dmembers-list.jpg "List Of Members")
 
 <br>
 
-- **List Of Active Members**
+- **List Of Active Members** - `/my-golf-club/members/list/active`
 
 ![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dactive-members-list.jpg "List Of Active Members")
 
 <br>
 
 - **Add Member**
-  - **Form**
+- **Form** - `/my-golf-club/members/add`
 
 ![Image contains add member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5Dadd-member.jpg "Add Member")
 
+- **Success**
+
+_// TODO: images here_
+
+- **Invalid Data Provided** - `/my-golf-club/members/save`
+- **First name invalid**
+
+_// TODO: images here_
+
+- **Last name invalid**
+
+_// TODO: images here_
+
+- **Email invalid**
+
+_// TODO: images here_
+
 <br>
 
-- **Update Member**
+- **Update Member** - `/my-golf-club/members/update?memberId=1`
 
-![Image contains update member page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-update-member.jpg  "Update Member")
-
-<br>
-
-- **Delete Member**
-
-![Image contains delete member page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-delete-member.jpg "Delete Member")
+![Image contains update member page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg  "Update Member")
 
 <br>
 
-- **Add User**
+- **Delete Member** `/my-golf-club/members/delete?memberId=1`
 
-![Image contains add user page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized-when-add-user.jpg "Add User")
+![Image contains delete member page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Delete Member")
+
+<br>
+
+- **Add User** - `/my-golf-club/users/add`
+
+![Image contains add user page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Add User")
 
 <br>
 
 ### 4. Admin Role
 
-- **Home Page**
+- **Home Page** - `/my-golf-club`
 
 ![Image contains home page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dhome-page.jpg "Home Page")
 
 <br>
 
-- **List Of Members**
+- **List Of Members** - `/my-golf-club/members/list`
 
 ![Image contains list of members page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dmembers-list.jpg "List Of Members")
 
 <br>
 
-- **List Of Active Members**
+- **List Of Active Members** - `/my-golf-club/members/list/active`
 
 ![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dactive-members-list.jpg "List Of Active Members")
 
 <br>
 
 - **Add Member**
-  - **Form**
+  - **Form** - `/my-golf-club/members/add`
 
 ![Image contains add member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/%5BA%5Dadd-member.jpg "Add Member")
+
+- **Success**
+
+_// TODO: images here_
+
+- **Invalid Data Provided** - `/my-golf-club/members/save`
+- **First name invalid**
+
+_// TODO: images here_
+
+- **Last name invalid**
+
+_// TODO: images here_
+
+- **Email invalid**
+
+_// TODO: images here_
 
 <br>
 
 - **Update Member**
-  - **Form**
+  - **Form** - `/my-golf-club/members/update?memberId=1`
 
 ![Image contains update member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5Dupdate-member.jpg "Update Member")
 
+- **Success**
+
+_// TODO: images here_
+
+- **Invalid Data Provided** - `/my-golf-club/members/save`
+- **First name invalid**
+
+_// TODO: images here_
+
+- **Last name invalid**
+
+_// TODO: images here_
+
+- **Email invalid**
+
+_// TODO: images here_
+
 <br>
 
-- **Delete Member**
+- **Delete Member** - `/my-golf-club/members/delete?memberId=1`
 
-![Image contains delete member page when logged as admin.](screenshots "Delete Member") /TODO
+![Image contains delete member page when logged as admin.](screenshots "Delete Member") // TODO
 
 <br>
 
 - **Add User**
-  - **Form**
+  - **Form** - `/my-golf-club/users/add`
 
 ![Image contains add user page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5Dadd-user.jpg "Add User")
+
+- **Success**
+
+_// TODO: images here_
+
+- **Invalid Data Provided** - `/my-golf-club/members/save`
+- **Username invalid**
+
+_// TODO: images here_
+
+- **Password invalid**
+
+_// TODO: images here_
+
+<div align="right">
+    <a href="#table-of-content">Go back to the Table Of Content</a>
+</div>
 
 ## API Reference
 
@@ -379,7 +497,7 @@ http://localhost:9090/swagger-ui/index.html
 You can also click on a proper button on the homepage, the page you are redirected to after successful authentication.
 
 ![Image contains clickable button displayed on homepage that redirects to API documentation.](screenshots "Button on homepage") 
-/TODO
+// TODO
 
 > Make sure you have 9090 port available, since configuration specifies to run on this server port.
 You could also change the configuration to your liking if necessary.
@@ -415,6 +533,10 @@ Default `HOST` = http://localhost:9090
 |                DELETE                 | Path variable (required) |
 |:-------------------------------------:|:------------------------:|
 | `HOST/my-golf-club/api/members/{int}` |       int {1, ..}        |
+
+<div align="right">
+    <a href="#table-of-content">Go back to the Table Of Content</a>
+</div>
 
 ## Author
 
