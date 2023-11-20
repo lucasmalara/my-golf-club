@@ -89,7 +89,7 @@ Read further for more details.
 6. [ ] TODO: Add screenshots for cases when user provide invalid member data:
 
     1. [ ] Moderator
-        1. [ ] First name invalid
+        1. [x] ~~First name invalid~~
         2. [ ] Last name invalid
         3. [ ] Email invalid
     2. [ ] Admin
@@ -363,7 +363,11 @@ _// TODO: images here_
 - **Invalid Data Provided** - `/my-golf-club/members/save`
 - **First name invalid**
 
-_// TODO: images here_
+![Image contains add member page with first name required error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BM%5D_first-name-is-required.jpg "First name is required")
+
+![Image contains add member page with first name not valid error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BM%5D_first-name-not-valid.jpg "First name not valid")
+
+![Image contains add member page with first name not valid and length error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BM%5D_first-name-not-valid.jpg "First name not valid and length out of bounds")
 
 - **Last name invalid**
 
