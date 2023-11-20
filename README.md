@@ -40,7 +40,7 @@ Read further for more details.
 - CRUD operations support
 - Included SQL scripts for creation of user, database, tables and records
 
-<div align="right">
+<div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
@@ -65,7 +65,7 @@ Read further for more details.
 |               Lombok                |    1.18.30    |
 | SpringDoc OpenAPI Starter WebMVC UI |     2.2.0     |  
 
-<div align="right">
+<div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
@@ -105,7 +105,7 @@ Read further for more details.
 
 8. [ ] TODO: Add a screenshot for a case when user tries to visit not existing page.
 
-<div align="right">
+<div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
@@ -194,7 +194,7 @@ where `$JDK_PATH` is an absolute path to a root folder of jdk 17 or 17+.
   gradle bootRun -D org.gradle.java.home='$JDK_PATH'
 ```
 
-<div align="right">
+<div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
@@ -225,12 +225,12 @@ Following cases have to be followed:
    - List Of Members
    - List of Active Members
    - Add Member
-     - Form
-     - Success
-     - Invalid Data Provided
-       - First name
-       - Last name
-       - Email
+     * Form
+     * Success
+     * Invalid Data Provided
+       + First name
+       + Last name
+       + Email
    - Update Member
    - Delete Member
    - Add User
@@ -242,26 +242,26 @@ Following cases have to be followed:
    - List Of Members
    - List of Active Members
    - Add Member
-      - Form
-      - Success
-      - Invalid Data Provided
-        - First name
-        - Last name
-        - Email
+     * Form
+     * Success
+     * Invalid Data Provided
+       + First name
+       + Last name
+       + Email
    - Update Member
-      - Form
-      - Success
-      - Invalid Data Provided
-        - First name
-        - Last name
-        - Email
+     * Form
+     * Success
+     * Invalid Data Provided
+       + First name
+       + Last name
+       + Email
    - Delete Member
    - Add User
-      - Form
-      - Success
-      - Invalid Data Provided
-        - Username
-        - Password
+     * Form
+     * Success
+     * Invalid Data Provided
+       + Username
+       + Password
 
 
 5. Any authenticated
@@ -291,19 +291,19 @@ Following cases have to be followed:
 
 - **Home Page** - `/my-golf-club`
 
-![Image contains home page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dhome-page.jpg "Home Page")
+![Image contains home page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5D_active-members-list.jpg "Home Page")
 
 <br>
 
 - **List Of Members** - `/my-golf-club/members/list`
 
-![Image contains list of members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dmembers-list.jpg "List Of Members")
+![Image contains list of members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5D_members-list.jpg "List Of Members")
 
 <br>
 
 - **List of Active Members** - `/my-golf-club/members/list/active`
 
-![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5Dactive-members-list.jpg "List Of Active Members")
+![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5D_active-members-list.jpg "List Of Active Members")
 
 <br>
 
@@ -335,19 +335,19 @@ Following cases have to be followed:
 
 - **Home Page** - `/my-golf-club`
 
-![Image contains home page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dhome-page.jpg "Home Page")
+![Image contains home page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5D_home-page.jpg "Home Page")
 
 <br>
 
 - **List Of Members** - `/my-golf-club/members/list`
 
-![Image contains list of members page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dmembers-list.jpg "List Of Members")
+![Image contains list of members page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5D_members-list.jpg "List Of Members")
 
 <br>
 
 - **List Of Active Members** - `/my-golf-club/members/list/active`
 
-![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5Dactive-members-list.jpg "List Of Active Members")
+![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5D_active-members-list.jpg "List Of Active Members")
 
 <br>
 
@@ -397,26 +397,26 @@ _// TODO: images here_
 
 - **Home Page** - `/my-golf-club`
 
-![Image contains home page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dhome-page.jpg "Home Page")
+![Image contains home page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5D_home-page.jpg "Home Page")
 
 <br>
 
 - **List Of Members** - `/my-golf-club/members/list`
 
-![Image contains list of members page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dmembers-list.jpg "List Of Members")
+![Image contains list of members page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5D_members-list.jpg "List Of Members")
 
 <br>
 
 - **List Of Active Members** - `/my-golf-club/members/list/active`
 
-![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_ADMIN/%5BA%5Dactive-members-list.jpg "List Of Active Members")
+![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_ADMIN/%5BA%5D_active-members-list.jpg "List Of Active Members")
 
 <br>
 
 - **Add Member**
   - **Form** - `/my-golf-club/members/add`
 
-![Image contains add member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/%5BA%5Dadd-member.jpg "Add Member")
+![Image contains add member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/%5BA%5D_add-member.jpg "Add Member")
 
 - **Success**
 
@@ -440,7 +440,7 @@ _// TODO: images here_
 - **Update Member**
   - **Form** - `/my-golf-club/members/update?memberId=1`
 
-![Image contains update member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5Dupdate-member.jpg "Update Member")
+![Image contains update member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5D_update-member.jpg "Update Member")
 
 - **Success**
 
@@ -470,7 +470,7 @@ _// TODO: images here_
 - **Add User**
   - **Form** - `/my-golf-club/users/add`
 
-![Image contains add user page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5Dadd-user.jpg "Add User")
+![Image contains add user page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5D_add-user.jpg "Add User")
 
 - **Success**
 
@@ -485,7 +485,7 @@ _// TODO: images here_
 
 _// TODO: images here_
 
-<div align="right">
+<div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
@@ -534,7 +534,7 @@ Default `HOST` = http://localhost:9090
 |:-------------------------------------:|:------------------------:|
 | `HOST/my-golf-club/api/members/{int}` |       int {1, ..}        |
 
-<div align="right">
+<div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
