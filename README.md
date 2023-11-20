@@ -98,12 +98,18 @@ Read further for more details.
         3. [x] ~~Email invalid~~
 
 
-7. [ ] TODO: Add screenshots for cases when admin provide invalid user data:
+7.  [ ] TODO: Add screenshots for cases when admin provide invalid member data while modifying:
+    1. [ ] First name invalid
+    2. [ ] Last name invalid
+    3. [ ] Email name invalid
+
+
+8. [ ] TODO: Add screenshots for cases when admin provide invalid user data:
     1. [ ] Username invalid
     2. [ ] Password invalid
 
 
-8. [ ] TODO: Add a screenshot for a case when user tries to visit not existing page.
+9. [ ] TODO: Add a screenshot for a case when user tries to visit not existing page.
 
 <div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
