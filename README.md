@@ -86,7 +86,7 @@ Read further for more details.
 5. [ ] TODO: Add a screenshot for a case where user was successfully added.
 
 
-6. [ ] TODO: Add screenshots for cases when user provide invalid member data:
+6. [x] ~~TODO: Add screenshots for cases when user provide invalid member data while adding:~~
 
     1. [x] ~~Moderator~~
         1. [x] ~~First name invalid~~
