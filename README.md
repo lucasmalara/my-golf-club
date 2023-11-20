@@ -93,7 +93,7 @@ Read further for more details.
         2. [x] ~~Last name invalid~~
         3. [x] ~~Email invalid~~
     2. [ ] Admin
-        1. [ ] First name invalid
+        1. [x] ~~First name invalid~~
         2. [ ] Last name invalid
         3. [ ] Email invalid
 
@@ -453,7 +453,11 @@ _// TODO: images here_
 - **Invalid Data Provided** - `/my-golf-club/members/save`
 - **First name invalid**
 
-_// TODO: images here_
+![Image contains add member page with first name required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BA%5D_first-name-is-required.jpg "First name is required")
+
+![Image contains add member page with first name not valid error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BA%5D_first-name-not-valid.jpg "First name not valid")
+
+![Image contains add member page with first name not valid and length error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BA%5D_first-name-not-valid-length.jpg "First name not valid and length out of bounds")
 
 <br>
 
