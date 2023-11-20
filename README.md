@@ -111,6 +111,8 @@ Read further for more details.
 
 9. [ ] TODO: Add a screenshot for a case when user tries to visit not existing page.
 
+10. [ ] TODO: Add a screenshot for a case when user logout successfully.
+
 <div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
@@ -273,6 +275,7 @@ Following cases have to be followed:
 5. Any authenticated
 
    - Invalid URL Provided
+   - Logout success
 
 
 > If you do not authenticate you will be redirected to a login page.
