@@ -34,10 +34,11 @@ public class UserController {
     public String saveUser(@Valid @ModelAttribute("user") UserModel userModel,
                            BindingResult result,
                            Model model) {
-        if (userService.findByUserName(userModel.getUsername()) != null) {
+        boolean userExists = userService.findByUserName(userModel.getUsername()) != null;
+        if (userExists) {
             model.addAttribute("alreadyTaken", "User already exists.");
         }
-        if (!result.hasErrors()) {
+        if (!result.hasErrors() && !userExists) {
             userService.save(userModel);
             model.addAttribute("hasBeenAdded", "User has been added.");
             return "add-user-success";
