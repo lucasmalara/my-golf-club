@@ -105,11 +105,13 @@ Read further for more details.
 
 
 8. [ ] TODO: Add screenshots for cases when admin provide invalid user data:
-    1. [ ] Username invalid
+    1. [ ] Username and password invalid
     2. [ ] Password invalid
+    3. [ ] Username invalid
 
 
 9. [x] ~~TODO: Add a screenshot for a case when user tries to visit not existing page.~~
+
 
 10. [x] ~~TODO: Add a screenshot for a case when user logout successfully.~~
 
@@ -554,13 +556,19 @@ _// TODO: images here_
 _// TODO: images here_
 
 - **Invalid Data Provided** - `/my-golf-club/members/save`
-- **Username invalid**
+- **Username and password invalid**
 
 _// TODO: images here_
 
 <br>
 
 - **Password invalid**
+
+_// TODO: images here_
+
+<br>
+
+- **Username invalid**
 
 _// TODO: images here_
 
