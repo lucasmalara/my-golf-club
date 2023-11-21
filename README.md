@@ -105,7 +105,7 @@ Read further for more details.
 
 
 8. [ ] TODO: Add screenshots for cases when admin provide invalid user data:
-    1. [ ] Username and password invalid
+    1. [x] ~~Username and password invalid~~
     2. [ ] Password invalid
     3. [ ] Username invalid
 
@@ -559,7 +559,15 @@ _// TODO: images here_
 - **Invalid Data Provided** - `/my-golf-club/members/save`
 - **Username and password invalid**
 
-_// TODO: images here_
+![Image contains add user page with username and password required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME-AND-PASSWORD/username-password-required.jpg "Username and password required")
+
+![Image contains add user page with username already taken and password required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME-AND-PASSWORD/user-exists-password-required.jpg "User already exists and password required")
+
+![Image contains add user page with username already taken and bad password provided when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME-AND-PASSWORD/user-exists-bad-password-provided.jpg "User already exists and bad password provided")
+
+![Image contains add user page with username already taken and password length error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME-AND-PASSWORD/user-exists-password-length.jpg "User already exists and password length out of bound")
+
+![Image contains add user page with username already taken and good password provided when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME-AND-PASSWORD/user-exists-good-password-provided.jpg "User already exists and good password provided")
 
 <br>
 
