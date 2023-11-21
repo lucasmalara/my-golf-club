@@ -111,7 +111,7 @@ Read further for more details.
 
 9. [ ] TODO: Add a screenshot for a case when user tries to visit not existing page.
 
-10. [ ] TODO: Add a screenshot for a case when user logout successfully.
+10. [x] ~~TODO: Add a screenshot for a case when user logout successfully.~~
 
 <div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
@@ -580,7 +580,7 @@ _// TODO: images here_
 
 - **Logout successfully**
 
-_// TODO: images here_
+![Image contains login page after successful logout.](./screenshots/Auth/ANY/LOGOUT/any-when-logout-ok.jpg "Logout page")
 
 <div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
