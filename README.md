@@ -109,7 +109,7 @@ Read further for more details.
     2. [ ] Password invalid
 
 
-9. [ ] TODO: Add a screenshot for a case when user tries to visit not existing page.
+9. [x] ~~TODO: Add a screenshot for a case when user tries to visit not existing page.~~
 
 10. [x] ~~TODO: Add a screenshot for a case when user logout successfully.~~
 
@@ -572,9 +572,10 @@ _// TODO: images here_
 
 ### 5. Any Authenticated
 
-- **Invalid URL address**
+- **Invalid URL address** - e.g.:
+    - `/my-golf-club/custom`
 
-_// TODO: images here_
+![Image contains page that does not exist.](./screenshots/Auth/ANY/page-does-not-exist.jpg "Page does not exist.")
 
 <br>
 
