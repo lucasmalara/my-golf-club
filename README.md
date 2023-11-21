@@ -270,8 +270,9 @@ Following cases have to be followed:
      * Form
      * Success
      * Invalid Data Provided
-       + Username
+       + Username and password
        + Password
+       + Username
 
 
 5. [Any authenticated](#5-any-authenticated)
