@@ -578,7 +578,7 @@ _// TODO: images here_
 
 <br>
 
-- **Logout successfully**
+- **Logout successfully** - `/my-golf-club/login?logout`
 
 ![Image contains login page after successful logout.](./screenshots/Auth/ANY/LOGOUT/any-when-logout-ok.jpg "Logout page")
 
