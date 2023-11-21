@@ -210,13 +210,13 @@ where `$JDK_PATH` is an absolute path to a root folder of jdk 17 or 17+.
 
 Following cases have to be followed:
 
-1. Unauthenticated
+1. [Unauthenticated](#1-unauthenticated)
 
    - Login Page
    - Login Page if you provide invalid credentials
 
 
-2. Authenticated with Employee role
+2. [Authenticated with Employee role](#2-employee-role)
 
    - Home Page
    - List Of Members
@@ -227,7 +227,7 @@ Following cases have to be followed:
    - Add User
 
 
-3. Authenticated with Moderator role
+3. [Authenticated with Moderator role](#3-moderator-role)
 
    - Home Page
    - List Of Members
@@ -244,7 +244,7 @@ Following cases have to be followed:
    - Add User
 
 
-4. Authenticated with Admin role
+4. [Authenticated with Admin role](#4-admin-role)
 
    - Home Page
    - List Of Members
@@ -272,7 +272,7 @@ Following cases have to be followed:
        + Password
 
 
-5. Any authenticated
+5. [Any authenticated](#5-any-authenticated)
 
    - Invalid URL Provided
    - Logout success
@@ -293,6 +293,10 @@ Following cases have to be followed:
 - **Login Page if you provide invalid credentials** - `/login?error`
 
 ![Image contains login page after providing invalid credentials.](./screenshots/No-Auth/bad-credentials.jpg "Login page - invalid credentials")
+
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
 
 <br>
 
@@ -337,6 +341,10 @@ Following cases have to be followed:
 - **Add User** - `/my-golf-club/users/add`
 
 ![Image contains add user page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Add User")
+
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
 
 <br>
 
@@ -423,6 +431,10 @@ _// TODO: images here_
 - **Add User** - `/my-golf-club/users/add`
 
 ![Image contains add user page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Add User")
+
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
 
 <br>
 
@@ -549,6 +561,24 @@ _// TODO: images here_
 <br>
 
 - **Password invalid**
+
+_// TODO: images here_
+
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
+<br>
+
+### 5. Any Authenticated
+
+- **Invalid URL address**
+
+_// TODO: images here_
+
+<br>
+
+- **Logout successfully**
 
 _// TODO: images here_
 
