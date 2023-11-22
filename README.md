@@ -780,7 +780,7 @@ We can also list users via GUI application:
 ```textmate
     SELECT ur.username, replace(r.name,"ROLE_", '') as 'role'
     FROM my_golf_club.users_roles ur
-    RIGHT JOIN my_golf_club.role r
+    LEFT JOIN my_golf_club.role r
     ON ur.role_id = r.id
     WHERE ur.username=$username;
 ```
