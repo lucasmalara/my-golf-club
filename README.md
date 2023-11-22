@@ -71,7 +71,7 @@ Read further for more details.
 
 ## TODO List
 
-1. [ ] TODO: Add a screenshot for a case where it is shown where to click to go to see an API documentation.
+1. [x] ~~TODO: Add a screenshot for a case where it is shown where to click to go to see an API documentation.~~
 
 
 2. [ ] TODO: Add a screenshot for a case where member was successfully added.
@@ -617,10 +617,13 @@ _// TODO: images here_
 To read **official documentation**, run the project, authenticate and go to address:
 http://localhost:9090/swagger-ui/index.html
 
-You can also click on a proper button on the homepage, the page you are redirected to after successful authentication.
+You can also click on a proper button on the homepage, the page you are redirected to after successful authentication. &darr;
 
-![Image contains clickable button displayed on homepage that redirects to API documentation.](screenshots "Button on homepage") 
-// TODO
+![Image contains clickable button displayed on homepage when logged as employee that redirects to API documentation.](./screenshots/Auth/ANY/employee-api-docs-button.jpg "Button on homepage, logged as employee")
+
+![Image contains clickable button displayed on homepage when logged as moderator that redirects to API documentation.](./screenshots/Auth/ANY/moderator-api-docs-button.jpg "Button on homepage, logged as moderator")
+
+![Image contains clickable button displayed on homepage when logged as admin that redirects to API documentation.](./screenshots/Auth/ANY/admin-api-docs-button.jpg "Button on homepage - logged as admin")
 
 > Make sure you have 9090 port available, since configuration specifies to run on this server port.
 You could also change the configuration to your liking if necessary.
