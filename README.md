@@ -138,17 +138,110 @@ Recommendations: MySQL Workbench 8 or other GUI database manager.
 
 - [01-create-user.sql](./database/sql-scripts/01-create-user.sql)
 
+```textmate
+    DROP USER if exists 'golfadmin'@'%';
+    
+    CREATE USER 'golfadmin'@'%' IDENTIFIED BY 'golfadmin';
+    
+    GRANT ALL PRIVILEGES ON * . * TO 'golfadmin'@'%';
+```
+
 5. Create a new connection with **golfadmin** user.
 
 6. Create a database schema:
 
 - [02-create-db-schema.sql](./database/sql-scripts/02-create-db-schema.sql)
 
+```textmate
+    CREATE DATABASE  IF NOT EXISTS `my_golf_club`;
+    USE `my_golf_club`;
+```
+
 7. Create tables and insert records:
 
 - [03-create-golf-club-member-table.sql](./database/sql-scripts/03-create-golf-club-member-table.sql)
 
+```textmate
+    DROP TABLE IF EXISTS `golf_club_member`;
+    
+    CREATE TABLE `golf_club_member` (
+      `id` int NOT NULL AUTO_INCREMENT,
+      `first_name` varchar(45) NOT NULL,
+      `last_name` varchar(45) NOT NULL,
+      `email` varchar(45) NOT NULL,
+      `active_member` boolean DEFAULT FALSE NOT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+    
+    INSERT INTO `golf_club_member` VALUES 
+        (1,'Emma','Green','emmagreen@mail.com',true),
+        (2,'Anna','Barsky','annab@mail.de',false),
+        (3,'Richard','Dunkins','rdunkins@mail.com',true),
+        (4,'Thomas','Terra','thomas@terra.me',true),
+        (5,'Edwin','Vega','edwin.vega@maily.com',false);
+```
+
 - [04-create-users-and-authorities-tables.sql](./database/sql-scripts/04-create-users-and-authorities-tables.sql)
+
+```textmate
+    USE `my_golf_club`;
+    
+    SET FOREIGN_KEY_CHECKS = 0;
+    DROP TABLE IF EXISTS `users_roles`;
+    DROP TABLE IF EXISTS `role`;
+    DROP TABLE IF EXISTS `user`;
+    SET FOREIGN_KEY_CHECKS = 1;
+    
+    CREATE TABLE `user` (
+      `username` varchar(50) NOT NULL UNIQUE,
+      `password` char(60) NOT NULL,
+      `enabled` tinyint NOT NULL,
+      PRIMARY KEY (`username`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+    
+    INSERT INTO `user` VALUES
+        ('employee','$2a$12$mjbSTPLi/cLOxxdrFrwcKO5kwpkiRAiB85Hs39Pbj4bA9nfD/ZtFy',1),
+        ('moderator','$2a$12$wd.0xHxzTtkZAEKFLM3/2eoXzkNcbcTZXEONdyy.udVvKyxXy.0La',1),
+        ('admin','$2a$12$jGXj8Ve3VwaVrnfwYeB7HOHzPZa9dMPT.WT7cPWT.04o/x0HAplk2',1);
+    
+    CREATE TABLE `role` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `name` varchar(50) NOT NULL,
+        PRIMARY KEY(`id`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+    
+    INSERT INTO `role` (`name`) VALUES
+        ('ROLE_EMPLOYEE'),
+        ('ROLE_MODERATOR'),
+        ('ROLE_ADMIN');
+    
+    SET FOREIGN_KEY_CHECKS = 0;
+    
+    CREATE TABLE `users_roles` (
+      `username` varchar(50) NOT NULL,
+      `role_id` int(11) NOT NULL,
+      PRIMARY KEY (`username`, `role_id`),
+      KEY `FK_ROLE_idx` (`role_id`),
+    
+      CONSTRAINT `FK_USER` FOREIGN KEY (`username`)
+      REFERENCES `user` (`username`)
+      ON DELETE NO ACTION ON UPDATE NO ACTION,
+    
+      CONSTRAINT `FK_ROLE` FOREIGN KEY (`role_id`)
+      REFERENCES `role` (`id`)
+      ON DELETE NO ACTION ON UPDATE NO ACTION
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+    
+    SET FOREIGN_KEY_CHECKS = 1;
+    
+    INSERT INTO `users_roles` VALUES
+        ('employee', 1),
+        ('moderator', 1),
+        ('moderator', 2),
+        ('admin', 1),
+        ('admin', 2),
+        ('admin', 3);
+```
 
 ## Project Setup
 
