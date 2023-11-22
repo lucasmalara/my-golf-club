@@ -74,16 +74,16 @@ Read further for more details.
 1. [x] ~~TODO: Add a screenshot for a case where it is shown where to click to go to see an API documentation.~~
 
 
-2. [ ] TODO: Add a screenshot for a case where member was successfully added.
+2. [ ] TODO: Add a screenshot for a case when member was successfully added.
 
 
-3. [ ] TODO: Add a screenshot for a case where member was successfully modified.
+3. [ ] TODO: Add a screenshot for a case when member was successfully modified.
 
 
-4. [ ] TODO: Add a screenshot for a case where member was successfully removed.
+4. [ ] TODO: Add a screenshot for a case when member was successfully removed.
 
 
-5. [ ] TODO: Add a screenshot for a case where user was successfully added.
+5. [ ] TODO: Add a screenshot for a case when user was successfully added.
 
 
 6. [x] ~~TODO: Add screenshots for cases when user provide invalid member data while adding:~~
