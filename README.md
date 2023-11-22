@@ -106,8 +106,8 @@ Read further for more details.
 
 8. [ ] TODO: Add screenshots for cases when admin provide invalid user data:
     1. [x] ~~Username and password invalid~~
-    2. [ ] Password invalid
-    3. [ ] Username invalid
+    2. [x] ~~Username invalid~~
+    3. [ ] Password invalid
 
 
 9. [x] ~~TODO: Add a screenshot for a case when user tries to visit not existing page.~~
@@ -271,8 +271,8 @@ Following cases have to be followed:
      * Success
      * Invalid Data Provided
        + Username and password
-       + Password
        + Username
+       + Password
 
 
 5. [Any authenticated](#5-any-authenticated)
@@ -571,13 +571,17 @@ _// TODO: images here_
 
 <br>
 
-- **Password invalid**
+- **Username invalid**
 
-_// TODO: images here_
+![Image contains add user page with username already taken error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME/user-exists.jpg "User already exists")
+
+![Image contains add user page with good password provided when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME/username-bad-length-good-password-provided.jpg "Good password provided")
+
+![Image contains add user page with username length out of bound error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME/username-length-error.jpg "Username length out of bound")
 
 <br>
 
-- **Username invalid**
+- **Password invalid**
 
 _// TODO: images here_
 
