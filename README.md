@@ -83,7 +83,7 @@ Read further for more details.
 4. [ ] TODO: Add a screenshot for a case when member was successfully removed.
 
 
-5. [ ] TODO: Add a screenshot for a case when user was successfully added.
+5. [x] ~~TODO: Add a screenshot for a case when user was successfully added.~~
 
 
 6. [x] ~~TODO: Add screenshots for cases when user provide invalid member data while adding:~~
@@ -554,7 +554,55 @@ _// TODO: images here_
 
 - **Success**
 
-_// TODO: images here_
+![Image contains add user page with filled form when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5D_add-user-filled.jpg "User Registration filled")
+
+![Image contains confirmation page for adding users.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5D_add-user-success.jpg "User add success")
+
+**We can verify if user has been added.**
+
+1. Open `MySQL Command Line Client`
+
+2. You will be asked for a password to your `root` **MySQL** account. Provide correct password and press `enter`.
+
+3. Connect to database `my_golf_club`
+
+```shell
+    use my_golf_club
+```
+
+4. List all users
+
+```textmate
+    SELECT * FROM user;
+```
+
+![Image contains list of users displayed in CLI](./screenshots/Auth/ROLE_ADMIN/ADD-USER/user-in-db-cli.jpg "List users in CLI")
+
+We can also list users via GUI application:
+
+![Image contains list of users displayed in GUI application](./screenshots/Auth/ROLE_ADMIN/ADD-USER/user-in-db-gui.jpg "List users in GUI")
+
+> As we can see all password are encrypted.
+
+**Now, we verify if user has declared role(s)**
+
+5. List user with his role(s)
+
+```textmate
+    SELECT ur.username, replace(r.name,"ROLE_", '') as 'role'
+    FROM my_golf_club.users_roles ur
+    RIGHT JOIN my_golf_club.role r
+    ON ur.role_id = r.id
+    WHERE ur.username=$username;
+```
+
+in this case `$username = 'newEmployee'`
+
+![Image contains user with his roles.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/user-role-in-db-cli.jpg)
+
+![Image contains user with his roles.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/user-role-in-db-gui.jpg)
+
+<br>
 
 - **Invalid Data Provided** - `/my-golf-club/members/save`
 - **Username and password invalid**
