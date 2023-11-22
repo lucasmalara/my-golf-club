@@ -104,10 +104,10 @@ Read further for more details.
     3. [ ] Email name invalid
 
 
-8. [ ] TODO: Add screenshots for cases when admin provide invalid user data:
+8. [x] ~~TODO: Add screenshots for cases when admin provide invalid user data:~~
     1. [x] ~~Username and password invalid~~
     2. [x] ~~Username invalid~~
-    3. [ ] Password invalid
+    3. [x] ~~Password invalid~~
 
 
 9. [x] ~~TODO: Add a screenshot for a case when user tries to visit not existing page.~~
@@ -583,7 +583,11 @@ _// TODO: images here_
 
 - **Password invalid**
 
-_// TODO: images here_
+![Image contains add user page with password is required when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/PASSWORD/password-is-required.jpg "Password is required")
+
+![Image contains add user page with bad password provided when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/PASSWORD/password-is-required-bad-password-provided.jpg "Bad password provided")
+
+![Image contains add user page with password length out of bound error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/PASSWORD/password-length.jpg "Password length out of bound")
 
 <div align='right'>
     <a href="#screenshots">Go back to the screenshots cases</a>
