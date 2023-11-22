@@ -22,7 +22,7 @@ Interaction with a system is done via web app and also extensively with `RESTful
 after valid **authentication** and **authorization**.
 Read further for more details.
 
-## Table Of Content
+# Table Of Content
 
 - [Features](#features)
 - [Project Details](#project-details)
@@ -31,7 +31,7 @@ Read further for more details.
 - [Screenshots](#screenshots)
 - [API Reference](#api-reference)
 
-## Features
+# Features
 
 - System management for your golf club - helping you with members management
 - Secured with user authentication and authorization
@@ -44,7 +44,7 @@ Read further for more details.
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
-## Project Details
+# Project Details
 
 - Java 17 (LTS)
 - MySQL database
@@ -69,7 +69,7 @@ Read further for more details.
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
-## TODO List
+# TODO List
 
 1. [x] ~~TODO: Add a screenshot for a case where it is shown where to click to go to see an API documentation.~~
 
@@ -119,14 +119,14 @@ Read further for more details.
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
-## Run Project From Source
+# Run Project From Source
 
 Prerequisites:
 MySQL Server 8+, Git, JDK 17+, Gradle 8.3+.
 
 Recommendations: MySQL Workbench 8 or other GUI database manager.
 
-### Database Setup
+## Database Setup
 
 1. Make sure you run MySQL Server in a background.
 
@@ -150,7 +150,7 @@ Recommendations: MySQL Workbench 8 or other GUI database manager.
 
 - [04-create-users-and-authorities-tables.sql](./database/sql-scripts/04-create-users-and-authorities-tables.sql)
 
-### Project Setup
+## Project Setup
 
 1. Open a terminal in your desired location.
 
@@ -208,92 +208,100 @@ where `$JDK_PATH` is an absolute path to a root folder of jdk 17 or 17+.
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
-## Screenshots
+# Screenshots
 
 Following cases have to be followed:
 
 1. [Unauthenticated](#1-unauthenticated)
 
-   - Login Page
-   - Login Page if you provide invalid credentials
+   - [Login Page](#login-page)
+   - [Login Page if you provide invalid credentials](#login-page-if-you-provide-invalid-credentials)
 
 
 2. [Authenticated with Employee role](#2-employee-role)
 
-   - Home Page
-   - List Of Members
-   - List of Active Members
-   - Add Member
-   - Update Member
-   - Delete Member
-   - Add User
+   - [Home Page](#employee---home-page)
+   - [List Of Members](#employee---list-of-members)
+   - [List of Active Members](#employee---list-of-active-members)
+   - [Add Member](#employee---add-member)
+   - [Update Member](#employee---update-member)
+   - [Delete Member](#employee---delete-member)
+   - [Add User](#employee---add-user)
 
 
 3. [Authenticated with Moderator role](#3-moderator-role)
 
-   - Home Page
-   - List Of Members
-   - List of Active Members
-   - Add Member
-     * Form
-     * Success
-     * Invalid Data Provided
-       + First name
-       + Last name
-       + Email
-   - Update Member
-   - Delete Member
-   - Add User
+   - [Home Page](#moderator---home-page)
+   - [List Of Members](#moderator---list-of-members)
+   - [List of Active Members](#moderator---list-of-active-members)
+   - [Add Member](#moderator---add-member)
+     * [Form](#moderator---add-member-form)
+     * [Success](#moderator---add-member-success)
+     * [Invalid Data Provided](#moderator---add-member-invalid-data-provided)
+       + [First name](#moderator---add-member-first-name-invalid)
+       + [Last name](#moderator---add-member-last-name-invalid)
+       + [Email](#moderator---add-member-email-invalid)
+   - [Update Member](#moderator---update-member)
+   - [Delete Member](#moderator---delete-member)
+   - [Add User](#moderator---add-user)
 
 
 4. [Authenticated with Admin role](#4-admin-role)
 
-   - Home Page
-   - List Of Members
-   - List of Active Members
-   - Add Member
-     * Form
-     * Success
-     * Invalid Data Provided
-       + First name
-       + Last name
-       + Email
-   - Update Member
-     * Form
-     * Success
-     * Invalid Data Provided
-       + First name
-       + Last name
-       + Email
-   - Delete Member
-   - Add User
-     * Form
-     * Success
-     * Invalid Data Provided
-       + Username and password
-       + Username
-       + Password
+   - [Home Page](#admin---home-page)
+   - [List Of Members](#admin---list-of-members)
+   - [List of Active Members](#admin---list-of-active-members)
+   - [Add Member](#admin---add-member)
+     * [Form](#admin---add-member-form)
+     * [Success](#admin---add-member-success)
+     * [Invalid Data Provided](#admin---add-member-invalid-data-provided)
+       + [First name](#admin---add-member-first-name-invalid)
+       + [Last name](#admin---add-member-last-name-invalid)
+       + [Email](#admin---add-member-email-invalid)
+   - [Update Member](#admin---update-member)
+     * [Form](#admin---update-member-form)
+     * [Success](#admin---update-member-success)
+     * [Invalid Data Provided](#admin---update-member-invalid-data-provided)
+       + [First name](#admin---update-member-first-name-invalid)
+       + [Last name](#admin---update-member-last-name-invalid)
+       + [Email](#admin---update-member-email-invalid)
+   - [Delete Member](#admin---delete-member)
+   - [Add User](#admin---add-user)
+     * [Form](#admin---add-user-form)
+     * [Success](#admin---add-user-success)
+     * [Invalid Data Provided](#admin---add-user-invalid-data-provided)
+       + [Username and password](#admin---add-user-username-and-password-invalid)
+       + [Username](#admin---add-user-username-invalid)
+       + [Password](#admin---add-user-password-invalid)
 
 
 5. [Any authenticated](#5-any-authenticated)
 
-   - Invalid URL Provided
-   - Logout success
+   - [Invalid URL Provided](#invalid-url-address)
+   - [Logout success](#logout-successfully)
 
 
 > If you do not authenticate you will be redirected to a login page.
 
 <br>
 
-### 1. Unauthenticated
+## 1. Unauthenticated
 
-- **Login Page** - `/login`
+### Login Page
+
+`/login`
 
 ![Image contains login page.](./screenshots/No-Auth/login-page.jpg "Login page")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Login Page if you provide invalid credentials** - `/login?error`
+### Login Page if you provide invalid credentials
+
+`/login?error`
 
 ![Image contains login page after providing invalid credentials.](./screenshots/No-Auth/bad-credentials.jpg "Login page - invalid credentials")
 
@@ -303,45 +311,83 @@ Following cases have to be followed:
 
 <br>
 
-### 2. Employee Role
+## 2. Employee Role
 
-- **Home Page** - `/my-golf-club`
+### Employee - Home Page
+
+`/my-golf-club`
 
 ![Image contains home page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5D_active-members-list.jpg "Home Page")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **List Of Members** - `/my-golf-club/members/list`
+### Employee - List Of Members
+
+`/my-golf-club/members/list`
 
 ![Image contains list of members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5D_members-list.jpg "List Of Members")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **List of Active Members** - `/my-golf-club/members/list/active`
+### Employee - List of Active Members
+
+`/my-golf-club/members/list/active`
 
 ![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5D_active-members-list.jpg "List Of Active Members")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Add Member** - `/my-golf-club/members/add`
+### Employee - Add Member
+
+`/my-golf-club/members/add`
 
 ![Image contains add member page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Add Member")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Update Member** - `/my-golf-club/members/update?memberId=1`
+### Employee - Update Member
+
+`/my-golf-club/members/update?memberId=1`
 
 ![Image contains update member page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Update Member")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Delete Member** - `/my-golf-club/members/delete?memberId=1`
+### Employee - Delete Member
+
+`/my-golf-club/members/delete?memberId=1`
 
 ![Image contains delete member page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Delete Member")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Add User** - `/my-golf-club/users/add`
+### Employee - Add User
+
+`/my-golf-club/users/add`
 
 ![Image contains add user page when logged as employee.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Add User")
 
@@ -351,41 +397,73 @@ Following cases have to be followed:
 
 <br>
 
-### 3. Moderator Role
+## 3. Moderator Role
 
-- **Home Page** - `/my-golf-club`
+### Moderator - Home Page
+
+`/my-golf-club`
 
 ![Image contains home page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5D_home-page.jpg "Home Page")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **List Of Members** - `/my-golf-club/members/list`
+### Moderator - List Of Members
+
+`/my-golf-club/members/list`
 
 ![Image contains list of members page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5D_members-list.jpg "List Of Members")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **List Of Active Members** - `/my-golf-club/members/list/active`
+### Moderator - List Of Active Members
+
+`/my-golf-club/members/list/active`
 
 ![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_MODERATOR/%5BM%5D_active-members-list.jpg "List Of Active Members")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Add Member**
-- **Form** - `/my-golf-club/members/add`
+### Moderator - Add Member
+
+#### Moderator - Add Member Form
+
+`/my-golf-club/members/add`
 
 ![Image contains add member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5Dadd-member.jpg "Add Member")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Success**
+#### Moderator - Add Member Success
 
 _// TODO: images here_
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Invalid Data Provided** - `/my-golf-club/members/save`
-- **First name invalid**
+#### Moderator - Add Member Invalid Data Provided
+
+`/my-golf-club/members/save`
+
+#### Moderator - Add Member First Name Invalid
 
 ![Image contains add member page with first name required error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BM%5D_first-name-is-required.jpg "First name is required")
 
@@ -393,9 +471,13 @@ _// TODO: images here_
 
 ![Image contains add member page with first name not valid and length error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BM%5D_first-name-not-valid-length.jpg "First name not valid and length out of bounds")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Last name invalid**
+#### Moderator - Add Member Last Name Invalid
 
 ![Image contains add member page with last name required error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/LAST-NAME/%5BM%5D_last-name-is-required.jpg "Last name is required")
 
@@ -403,9 +485,13 @@ _// TODO: images here_
 
 ![Image contains add member page with last name not valid and length error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/LAST-NAME/%5BM%5D_last-name-not-valid-length.jpg "Last name not valid and length out of bounds")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Email invalid**
+#### Moderator - Add Member Email Invalid
 
 ![Image contains add member page with email required error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/EMAIL/%5BM%5D_email-is-required.jpg "Email is required")
 
@@ -417,21 +503,39 @@ _// TODO: images here_
 
 ![Image contains add member page with email not valid error when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/NOT-VALID/EMAIL/%5BM%5D_email-not-valid.jpg "Email is not valid.")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Update Member** - `/my-golf-club/members/update?memberId=1`
+### Moderator - Update Member
+
+`/my-golf-club/members/update?memberId=1`
 
 ![Image contains update member page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg  "Update Member")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Delete Member** `/my-golf-club/members/delete?memberId=1`
+### Moderator - Delete Member
+
+`/my-golf-club/members/delete?memberId=1`
 
 ![Image contains delete member page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Delete Member")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Add User** - `/my-golf-club/users/add`
+### Moderator - Add User
+
+`/my-golf-club/users/add`
 
 ![Image contains add user page when logged as moderator.](./screenshots/Auth/ANY/NOT-AUTHORIZED/not-authorized.jpg "Add User")
 
@@ -441,41 +545,73 @@ _// TODO: images here_
 
 <br>
 
-### 4. Admin Role
+## 4. Admin Role
 
-- **Home Page** - `/my-golf-club`
+### Admin - Home Page
+
+`/my-golf-club`
 
 ![Image contains home page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5D_home-page.jpg "Home Page")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **List Of Members** - `/my-golf-club/members/list`
+### Admin - List Of Members
+
+`/my-golf-club/members/list`
 
 ![Image contains list of members page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5D_members-list.jpg "List Of Members")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **List Of Active Members** - `/my-golf-club/members/list/active`
+### Admin - List Of Active Members
+
+`/my-golf-club/members/list/active`
 
 ![Image contains list of active members page when logged as employee.](./screenshots/Auth/ROLE_ADMIN/%5BA%5D_active-members-list.jpg "List Of Active Members")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Add Member**
-  - **Form** - `/my-golf-club/members/add`
+### Admin - Add Member
+
+#### Admin - Add Member Form
+
+`/my-golf-club/members/add`
 
 ![Image contains add member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/%5BA%5D_add-member.jpg "Add Member")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Success**
+#### Admin - Add Member Success
 
 _// TODO: images here_
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Invalid Data Provided** - `/my-golf-club/members/save`
-- **First name invalid**
+#### Admin - Add Member Invalid Data Provided
+
+`/my-golf-club/members/save`
+
+#### Admin - Add Member First Name Invalid
 
 ![Image contains add member page with first name required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BA%5D_first-name-is-required.jpg "First name is required")
 
@@ -483,9 +619,13 @@ _// TODO: images here_
 
 ![Image contains add member page with first name not valid and length error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/FIRST-NAME/%5BA%5D_first-name-not-valid-length.jpg "First name not valid and length out of bounds")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Last name invalid**
+#### Admin - Add Member Last Name Invalid
 
 ![Image contains add member page with last name required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/LAST-NAME/%5BA%5D_last-name-is-required.jpg "Last name is required")
 
@@ -493,9 +633,13 @@ _// TODO: images here_
 
 ![Image contains add member page with last name not valid and length error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/LAST-NAME/%5BA%5D_last-name-not-valid-length.jpg "Last name not valid and length out of bounds")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Email invalid**
+#### Admin - Add Member Email Invalid
 
 ![Image contains add member page with email required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/EMAIL/%5BA%5D_email-is-required.jpg "Email is required")
 
@@ -507,52 +651,95 @@ _// TODO: images here_
 
 ![Image contains add member page with email not valid error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/NOT-VALID/EMAIL/%5BA%5D_email-not-valid.jpg "Email is not valid.")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Update Member**
-  - **Form** - `/my-golf-club/members/update?memberId=1`
+### Admin - Update Member
+
+#### Admin - Update Member Form
+
+`/my-golf-club/members/update?memberId=1`
 
 ![Image contains update member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5D_update-member.jpg "Update Member")
 
-<br>
-
-- **Success**
-
-_// TODO: images here_
-
-- **Invalid Data Provided** - `/my-golf-club/members/save`
-- **First name invalid**
-
-_// TODO: images here_
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
 
 <br>
 
-- **Last name invalid**
+#### Admin - Update Member Success
 
 _// TODO: images here_
 
-<br>
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
 
-- **Email invalid**
+#### Admin - Update Member Invalid Data Provided
+
+`/my-golf-club/members/save`
+
+#### Admin - Update Member First Name Invalid
 
 _// TODO: images here_
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Delete Member** - `/my-golf-club/members/delete?memberId=1`
+#### Admin - Update Member Last Name Invalid
+
+_// TODO: images here_
+
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
+<br>
+
+#### Admin - Update Member Email Invalid
+
+_// TODO: images here_
+
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
+<br>
+
+### Admin - Delete Member
+
+`/my-golf-club/members/delete?memberId=1`
 
 ![Image contains delete member page when logged as admin.](screenshots "Delete Member") // TODO
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Add User**
-  - **Form** - `/my-golf-club/users/add`
+### Admin - Add User
+
+#### Admin - Add User Form
+
+`/my-golf-club/users/add`
 
 ![Image contains add user page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5D_add-user.jpg "Add User")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Success**
+#### Admin - Add User Success
 
 ![Image contains add user page with filled form when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5D_add-user-filled.jpg "User Registration filled")
 
@@ -584,9 +771,11 @@ We can also list users via GUI application:
 
 > As we can see all password are encrypted.
 
+<br>
+
 **Now, we verify if user has declared role(s)**
 
-5. List user with his role(s)
+5. List user with their role(s)
 
 ```textmate
     SELECT ur.username, replace(r.name,"ROLE_", '') as 'role'
@@ -602,10 +791,17 @@ in this case `$username = 'newEmployee'`
 
 ![Image contains user with his roles.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/user-role-in-db-gui.jpg)
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Invalid Data Provided** - `/my-golf-club/members/save`
-- **Username and password invalid**
+#### Admin - Add User Invalid Data Provided
+
+`/my-golf-club/members/save`
+
+#### Admin - Add User Username And Password Invalid
 
 ![Image contains add user page with username and password required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME-AND-PASSWORD/username-password-required.jpg "Username and password required")
 
@@ -617,9 +813,13 @@ in this case `$username = 'newEmployee'`
 
 ![Image contains add user page with username already taken and good password provided when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME-AND-PASSWORD/user-exists-good-password-provided.jpg "User already exists and good password provided")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Username invalid**
+#### Admin - Add User Username Invalid
 
 ![Image contains add user page with username already taken error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME/user-exists.jpg "User already exists")
 
@@ -627,9 +827,13 @@ in this case `$username = 'newEmployee'`
 
 ![Image contains add user page with username length out of bound error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/USERNAME/username-length-error.jpg "Username length out of bound")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Password invalid**
+#### Admin - Add User Password Invalid
 
 ![Image contains add user page with password is required when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/NOT-VALID/PASSWORD/password-is-required.jpg "Password is required")
 
@@ -643,16 +847,23 @@ in this case `$username = 'newEmployee'`
 
 <br>
 
-### 5. Any Authenticated
+## 5. Any Authenticated
 
-- **Invalid URL address** - e.g.:
-    - `/my-golf-club/custom`
+### Invalid URL Address
+
+e.g.: `/my-golf-club/custom`
 
 ![Image contains page that does not exist.](./screenshots/Auth/ANY/page-does-not-exist.jpg "Page does not exist.")
 
+<div align='right'>
+    <a href="#screenshots">Go back to the screenshots cases</a>
+</div>
+
 <br>
 
-- **Logout successfully** - `/my-golf-club/login?logout`
+### Logout Successfully
+
+`/my-golf-club/login?logout`
 
 ![Image contains login page after successful logout.](./screenshots/Auth/ANY/LOGOUT/any-when-logout-ok.jpg "Logout page")
 
@@ -660,7 +871,7 @@ in this case `$username = 'newEmployee'`
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
-## API Reference
+# API Reference
 
 To read **official documentation**, run the project, authenticate and go to address:
 http://localhost:9090/swagger-ui/index.html
@@ -676,7 +887,7 @@ You can also click on a proper button on the homepage, the page you are redirect
 > Make sure you have 9090 port available, since configuration specifies to run on this server port.
 You could also change the configuration to your liking if necessary.
 
-### Supported HTTP methods and endpoints:
+## Supported HTTP methods and endpoints:
 
 Default `HOST` = http://localhost:9090
 
@@ -712,6 +923,6 @@ Default `HOST` = http://localhost:9090
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
 
-## Author
+# Author
 
 [@lucasmalara](https://github.com/lucasmalara "author")
