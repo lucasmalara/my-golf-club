@@ -317,7 +317,7 @@ Following cases have to be followed:
 
 `/my-golf-club`
 
-![Image contains home page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5D_active-members-list.jpg "Home Page")
+![Image contains home page when logged as employee.](./screenshots/Auth/ROLE_EMPLOYEE/%5BE%5D_home-page.jpg "Home Page")
 
 <div align='right'>
     <a href="#screenshots">Go back to the screenshots cases</a>
