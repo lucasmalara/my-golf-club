@@ -76,7 +76,7 @@ Read further for more details.
 
 2. [ ] TODO: Add screenshots for a case when member was successfully added by:
    1. [x] ~~Moderator~~
-   2. [ ] Admin
+   2. [x] ~~Admin~~
 
 
 3. [ ] TODO: Add a screenshot for a case when member was successfully modified by admin.
@@ -702,7 +702,15 @@ Following cases have to be followed:
 
 #### Admin - Add Member Success
 
-_// TODO: images here_
+![Image contains filled add member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/%5BA%5D_add-member-filled.jpg "Add Member - Form Filled")
+
+`/my-golf-club/members/list`
+
+![Image contains members list page after member add success when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-MEMBER/%5BA%5D_add-member-members-list.jpg "Add Member - Members List")
+
+`/my-golf-club/members/list/active`
+
+![Image contains active members list page after member add success when logged as admin.](./screenshots/Auth/ROLE_ADMIN/%5BA%5D_active-members-list.jpg "Add Member - Active Members List")
 
 <div align='right'>
     <a href="#screenshots">Go back to the screenshots cases</a>
