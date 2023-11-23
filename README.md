@@ -1,10 +1,4 @@
 
-# THIS README FILE IS STILL UNDER THE DEVELOPMENT.
-
-**[SEE TODO LIST](#todo-list)**
-
-<hr>
-
 # MyGolfClub
 
 MyGolfClub is an implementation of a web-based management system.
@@ -70,52 +64,6 @@ Read further for more details.
 </div>
 
 # TODO List
-
-1. [x] ~~TODO: Add a screenshot for a case where it is shown where to click to go to see an API documentation.~~
-
-
-2. [x] ~~TODO: Add screenshots for a case when member was successfully added by:~~
-   1. [x] ~~Moderator~~
-   2. [x] ~~Admin~~
-
-
-3. [x] ~~TODO: Add a screenshot for a case when member was successfully modified by admin.~~
-
-
-4. [x] ~~TODO: Add a screenshot for a case when member was successfully removed by admin.~~
-
-
-5. [x] ~~TODO: Add a screenshot for a case when user was successfully added.~~
-
-
-6. [x] ~~TODO: Add screenshots for cases when user provide invalid member data while adding:~~
-
-    1. [x] ~~Moderator~~
-        1. [x] ~~First name invalid~~
-        2. [x] ~~Last name invalid~~
-        3. [x] ~~Email invalid~~
-    2. [x] ~~Admin~~
-        1. [x] ~~First name invalid~~
-        2. [x] ~~Last name invalid~~
-        3. [x] ~~Email invalid~~
-
-
-7.  [x] ~~TODO: Add screenshots for cases when admin provide invalid member data while modifying:~~
-    1. [x] ~~First name invalid~~
-    2. [x] ~~Last name invalid~~
-    3. [x] ~~Email name invalid~~
-
-
-8. [x] ~~TODO: Add screenshots for cases when admin provide invalid user data:~~
-    1. [x] ~~Username and password invalid~~
-    2. [x] ~~Username invalid~~
-    3. [x] ~~Password invalid~~
-
-
-9. [x] ~~TODO: Add a screenshot for a case when user tries to visit not existing page.~~
-
-
-10. [x] ~~TODO: Add a screenshot for a case when user logout successfully.~~
 
 <div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
