@@ -1,5 +1,5 @@
 
-# THIS README FILE IS STILL UNDER THE DEVELOPMENT. 
+# THIS README FILE IS STILL UNDER THE DEVELOPMENT.
 
 **[SEE TODO LIST](#todo-list)**
 
@@ -74,13 +74,15 @@ Read further for more details.
 1. [x] ~~TODO: Add a screenshot for a case where it is shown where to click to go to see an API documentation.~~
 
 
-2. [ ] TODO: Add a screenshot for a case when member was successfully added.
+2. [ ] TODO: Add screenshots for a case when member was successfully added by:
+   1. [ ] Moderator
+   2. [ ] Admin
 
 
-3. [ ] TODO: Add a screenshot for a case when member was successfully modified.
+3. [ ] TODO: Add a screenshot for a case when member was successfully modified by admin.
 
 
-4. [ ] TODO: Add a screenshot for a case when member was successfully removed.
+4. [ ] TODO: Add a screenshot for a case when member was successfully removed by admin.
 
 
 5. [x] ~~TODO: Add a screenshot for a case when user was successfully added.~~
@@ -834,6 +836,8 @@ _// TODO: images here_
 
 #### Admin - Add User Success
 
+`/my-golf-club/users/save`
+
 ![Image contains add user page with filled form when logged as admin.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5D_add-user-filled.jpg "User Registration filled")
 
 ![Image contains confirmation page for adding users.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5D_add-user-success.jpg "User add success")
@@ -956,7 +960,7 @@ e.g.: `/my-golf-club/custom`
 
 ### Logout Successfully
 
-`/my-golf-club/login?logout`
+`/login?logout`
 
 ![Image contains login page after successful logout.](./screenshots/Auth/ANY/LOGOUT/any-when-logout-ok.jpg "Logout page")
 
