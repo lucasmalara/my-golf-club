@@ -65,6 +65,8 @@ Read further for more details.
 
 # TODO List
 
+1. [ ] Unit tests implementation using frameworks: JUnit and Mockito.
+
 <div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
 </div>
