@@ -4,9 +4,9 @@ WEB:
 HOST/my-golf-club
 HOST/my-golf-club/members/list
 HOST/my-golf-club/members/list/active
-HOST/my-golf-club/members/list/add
-HOST/my-golf-club/members/list/update
-HOST/my-golf-club/members/list/delete
+HOST/my-golf-club/members/add
+HOST/my-golf-club/members/update?memberId=1
+HOST/my-golf-club/members/delete?memberId=1
 HOST/my-golf-club/users/add
 HOST/swagger-ui/index.html
 
