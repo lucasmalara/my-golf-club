@@ -74,7 +74,7 @@ Read further for more details.
 1. [x] ~~TODO: Add a screenshot for a case where it is shown where to click to go to see an API documentation.~~
 
 
-2. [ ] TODO: Add screenshots for a case when member was successfully added by:
+2. [x] ~~TODO: Add screenshots for a case when member was successfully added by:~~
    1. [x] ~~Moderator~~
    2. [x] ~~Admin~~
 
