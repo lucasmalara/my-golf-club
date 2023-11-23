@@ -22,7 +22,7 @@ public class GolfClubMember {
 
     @NotNull(message = "First name is required.")
     @Pattern(
-            regexp = "^[A-Z][a-z]{1,45}",
+            regexp = "^[A-Z][a-zA-Z]{1,45}",
             message = "First name is not valid."
     )
     @Length(
@@ -35,7 +35,7 @@ public class GolfClubMember {
 
     @NotNull(message = "Last name is required.")
     @Pattern(
-            regexp = "^[A-Z][a-z]{1,45}",
+            regexp = "^[A-Z][a-zA-Z]{1,45}",
             message = "Last name is not valid."
     )
     @Length(
