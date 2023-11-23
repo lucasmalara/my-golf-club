@@ -75,7 +75,7 @@ Read further for more details.
 
 
 2. [ ] TODO: Add screenshots for a case when member was successfully added by:
-   1. [ ] Moderator
+   1. [x] ~~Moderator~~
    2. [ ] Admin
 
 
@@ -536,7 +536,7 @@ Following cases have to be followed:
 
 `/my-golf-club/members/add`
 
-![Image contains add member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5Dadd-member.jpg "Add Member")
+![Image contains add member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5D_add-member.jpg "Add Member")
 
 <div align='right'>
     <a href="#screenshots">Go back to the screenshots cases</a>
@@ -546,7 +546,15 @@ Following cases have to be followed:
 
 #### Moderator - Add Member Success
 
-_// TODO: images here_
+![Image contains filled add member page when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5D_add-member-filled.jpg "Add Member - Form Filled")
+
+`/my-golf-club/members/list`
+
+![Image contains members list page after member add success when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5D_add-member-members-list.jpg "Add Member - Members List")
+
+`/my-golf-club/members/list/active`
+
+![Image contains active members list page after member add success when logged as moderator.](./screenshots/Auth/ROLE_MODERATOR/ADD-MEMBER/%5BM%5D_add-member-active-members-list.jpg "Add Member - Active Members List")
 
 <div align='right'>
     <a href="#screenshots">Go back to the screenshots cases</a>
