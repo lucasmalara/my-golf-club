@@ -101,7 +101,7 @@ Read further for more details.
 
 
 7.  [ ] TODO: Add screenshots for cases when admin provide invalid member data while modifying:
-    1. [ ] First name invalid
+    1. [x] ~~First name invalid~~
     2. [ ] Last name invalid
     3. [ ] Email name invalid
 
@@ -808,7 +808,11 @@ Following cases have to be followed:
 
 #### Admin - Update Member First Name Invalid
 
-_// TODO: images here_
+![Image contains update member page with first name required error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/NOT-VALID/FIRST-NAME/%5BA%5D_first-name-is-required.jpg "First name is required")
+
+![Image contains update member page with first name not valid error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/NOT-VALID/FIRST-NAME/%5BA%5D_first-name-not-valid.jpg "First name not valid")
+
+![Image contains update member page with first name not valid and length error when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/NOT-VALID/FIRST-NAME/%5BA%5D_first-name-not-valid-length.jpg "First name not valid and length out of bounds")
 
 <div align='right'>
     <a href="#screenshots">Go back to the screenshots cases</a>
