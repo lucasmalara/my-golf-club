@@ -79,7 +79,7 @@ Read further for more details.
    2. [x] ~~Admin~~
 
 
-3. [ ] TODO: Add a screenshot for a case when member was successfully modified by admin.
+3. [x] ~~TODO: Add a screenshot for a case when member was successfully modified by admin.~~
 
 
 4. [ ] TODO: Add a screenshot for a case when member was successfully removed by admin.
@@ -770,11 +770,15 @@ Following cases have to be followed:
 
 ### Admin - Update Member
 
+`/my-golf-club/members/list`
+
+![Image contains how to update member when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5D_update-member-click-here.jpg "Update Member - Button")
+
 #### Admin - Update Member Form
 
-`/my-golf-club/members/update?memberId=1`
+`/my-golf-club/members/update?memberId=6`
 
-![Image contains update member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5D_update-member.jpg "Update Member")
+![Image contains update member page when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5D_update-member.jpg "Update Member - Form")
 
 <div align='right'>
     <a href="#screenshots">Go back to the screenshots cases</a>
@@ -784,7 +788,15 @@ Following cases have to be followed:
 
 #### Admin - Update Member Success
 
-_// TODO: images here_
+![Image contains filled update member page with a new data when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5D_update-member-filled.jpg "Update Member - New Data")
+
+`/my-golf-club/members/list`
+
+![Image contains members list page after member update success when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5D_update-member-members-list.jpg "Update Member - Members List")
+
+`/my-golf-club/members/list/active`
+
+![Image contains active members list page after member update success when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5D_update-member-active-members-list.jpg "Update Member - Active Members List")
 
 <div align='right'>
     <a href="#screenshots">Go back to the screenshots cases</a>
