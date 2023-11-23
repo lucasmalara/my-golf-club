@@ -82,7 +82,7 @@ Read further for more details.
 3. [x] ~~TODO: Add a screenshot for a case when member was successfully modified by admin.~~
 
 
-4. [ ] TODO: Add a screenshot for a case when member was successfully removed by admin.
+4. [x] ~~TODO: Add a screenshot for a case when member was successfully removed by admin.~~
 
 
 5. [x] ~~TODO: Add a screenshot for a case when user was successfully added.~~
@@ -796,7 +796,7 @@ Following cases have to be followed:
 
 `/my-golf-club/members/list/active`
 
-![Image contains active members list page after member update success when logged as admin.](./screenshots/Auth/ROLE_ADMIN/UPDATE-MEMBER/%5BA%5D_update-member-active-members-list.jpg "Update Member - Active Members List")
+![Image contains active members list page after member update success when logged as admin.](./screenshots/Auth/ROLE_ADMIN/AFTER-DELETE-OR-UPDATE/%5BA%5D_update-delete-member-active-members-list.jpg "Update Member - Active Members List")
 
 <div align='right'>
     <a href="#screenshots">Go back to the screenshots cases</a>
@@ -854,9 +854,17 @@ Following cases have to be followed:
 
 ### Admin - Delete Member
 
-`/my-golf-club/members/delete?memberId=1`
+`/my-golf-club/members/delete?memberId=6`
 
-![Image contains delete member page when logged as admin.](screenshots "Delete Member") // TODO
+![Image contains how to delete member when logged as admin.](./screenshots/Auth/ROLE_ADMIN/DELETE-MEMBER/%5BA%5D_delete-member.jpg "Delete Member")
+
+`/my-golf-club/members/list`
+
+![Image contains members list page after member delete success when logged as admin.](./screenshots/Auth/ROLE_ADMIN/DELETE-MEMBER/%5BA%5D_delete-member-members-list.jpg "Delete Member - Members List")
+
+`/my-golf-club/members/list/active`
+
+![Image contains active members list page after member delete success when logged as admin.](./screenshots/Auth/ROLE_ADMIN/AFTER-DELETE-OR-UPDATE/%5BA%5D_update-delete-member-active-members-list.jpg "Delete Member - Active Members List")
 
 <div align='right'>
     <a href="#screenshots">Go back to the screenshots cases</a>
