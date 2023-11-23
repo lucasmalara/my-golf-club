@@ -100,7 +100,7 @@ Read further for more details.
         3. [x] ~~Email invalid~~
 
 
-7.  [ ] TODO: Add screenshots for cases when admin provide invalid member data while modifying:
+7.  [x] ~~TODO: Add screenshots for cases when admin provide invalid member data while modifying:~~
     1. [x] ~~First name invalid~~
     2. [x] ~~Last name invalid~~
     3. [x] ~~Email name invalid~~
