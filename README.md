@@ -4,8 +4,8 @@
 MyGolfClub is an implementation of a web-based management system.
 Users must log in using **unique** username and respected password to **authenticate**.
 All passwords are **encrypted** using **bcrypt** and stored securely in a database.
-Each user is associated with given role(s): _EMPLOYEE_, _MODERATOR_ or _ADMIN_. The role defines **authorization**
-level.
+Each user is associated with a given role(s): _EMPLOYEE_, _MODERATOR_ or _ADMIN_.
+The role defines **authorization** level.
 
 - _EMPLOYEE_ can only view members of the golf club. (`READ` operation)
 - _MODERATOR_ can view members and also add a new member to the club. (`CREATE`, `READ` operations)
@@ -27,7 +27,7 @@ Read further for more details.
 
 # Features
 
-- System management for your golf club - helping you with members management
+- System management for your golf club - helping you with members' management
 - Secured with user authentication and authorization
 - Web-based UI
 - RESTful API for extensibility
@@ -80,7 +80,7 @@ Recommendations: MySQL Workbench 8 or other GUI database manager.
 
 ## Database Setup
 
-1. Make sure you run MySQL Server in a background.
+1. Make sure you run MySQL Server in the background.
 
 2. Connect as root to MySQL Connection of your choice. (the best if you create a new one for this purpose)
 
@@ -213,7 +213,7 @@ Windows/Powershell:
   ($dir = "parent-dir") -and (mkdir $dir) -and (cd $dir)
 ```
 
-> You can use name of your choice instead.
+> You can use the name of your choice instead.
 
 2. Clone repository:
 
@@ -227,13 +227,13 @@ Windows/Powershell:
   gh repo clone lucasmalara/my-golf-club
 ```
 
-3. Open main directory of a project
+3. Open the main directory of a project
 
 ```shell
   cd my-golf-club
 ```
 
-> Name of this directory is inherited from this repository name.
+> The Name of this directory is inherited from this repository name.
 
 4. Run with Gradle:
 
@@ -255,7 +255,7 @@ where `$JDK_PATH` is an absolute path to a root folder of jdk 17 or 17+.
 
 # Screenshots
 
-Following cases have to be followed:
+The following cases have to be followed:
 
 1. [Unauthenticated](#1-unauthenticated)
 
@@ -326,7 +326,7 @@ Following cases have to be followed:
    - [Logout success](#logout-successfully)
 
 
-> If you do not authenticate you will be redirected to a login page.
+> If you do not authenticate, you will be redirected to a login page.
 
 <br>
 
@@ -844,7 +844,7 @@ Following cases have to be followed:
 
 ![Image contains confirmation page for adding users.](./screenshots/Auth/ROLE_ADMIN/ADD-USER/%5BA%5D_add-user-success.jpg "User add success")
 
-**We can verify if user has been added.**
+**We can verify if a user has been added.**
 
 1. Open `MySQL Command Line Client`
 
@@ -868,13 +868,13 @@ We can also list users via GUI application:
 
 ![Image contains list of users displayed in GUI application](./screenshots/Auth/ROLE_ADMIN/ADD-USER/user-in-db-gui.jpg "List users in GUI")
 
-> As we can see all password are encrypted.
+> As we can see, all passwords are encrypted.
 
 <br>
 
 **Now, we verify if user has declared role(s)**
 
-5. List user with their role(s)
+5. List user with his role(s)
 
 ```textmate
     SELECT ur.username, replace(r.name,"ROLE_", '') as 'role'
