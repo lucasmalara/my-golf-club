@@ -84,7 +84,7 @@ Recommendations: MySQL Workbench 8 or other GUI database manager.
 
 2. Connect as root to MySQL Connection of your choice. (the best if you create a new one for this purpose)
 
-3. You will need to run a few SQL scripts. You can find those in [database/sql-scripts/](./database/sql-scripts).
+3. You will need to run a few SQL scripts. You can find those in [here](./src/main/resources/database/sql-scripts).
 
 4. Create a new user:
 
