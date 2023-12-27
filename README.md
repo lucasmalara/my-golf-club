@@ -4,7 +4,7 @@
 MyGolfClub is an implementation of a web-based management system.
 Users must log in using **unique** username and respected password to **authenticate**.
 All passwords are **encrypted** using **bcrypt** and stored securely in a database.
-Each user is associated with a given role(s): _EMPLOYEE_, _MODERATOR_ or _ADMIN_.
+Each user is associated with a given role: _EMPLOYEE_, _MODERATOR_ or _ADMIN_.
 The role defines **authorization** level.
 
 - _EMPLOYEE_ can only view members of the golf club. (`READ` operation)
@@ -41,23 +41,24 @@ Read further for more details.
 # Project Details
 
 - Java 17 (LTS)
-- MySQL database
-- Gradle 8 + Kotlin
-- Spring Boot 3.1.5
+- MySQL DB 8
+- Gradle 8 Kotlin DSL
+- Spring Boot 3.2.1
 - BootStrap 5.3.2
 
 |            Dependencies             |    Version    |
 |:-----------------------------------:|:-------------:|
-|    Spring Boot Starter Data JPA     |     3.1.5     | 
-|       Spring Boot Starter Web       |     3.1.5     | 
-|         Spring Boot HATEOAS         |     3.1.5     | 
-|    Spring Boot Starter Security     |     3.1.5     | 
-|        Spring Boot Thymeleaf        |     3.1.5     | 
+|      Spring Boot Starter Test       |     3.2.1     | 
+|    Spring Boot Starter Data JPA     |     3.2.1     | 
+|       Spring Boot Starter Web       |     3.2.1     | 
+|     Spring Boot Starter HATEOAS     |     3.2.1     | 
+|    Spring Boot Starter Security     |     3.2.1     | 
+|    Spring Boot Starter Thymeleaf    |     3.2.1     | 
 |  Thymeleaf Extras Spring Security6  | 3.1.2.RELEASE | 
-|          MySQL Connector/J          |    8.0.33     | 
-|       Spring Boot Validation        |     3.1.5     | 
+|   Spring Boot Starter Validation    |     3.2.1     | 
+| SpringDoc OpenAPI Starter WebMVC UI |     2.3.0     |  
+|          MySQL Connector/J          |     8.2.0     | 
 |               Lombok                |    1.18.30    |
-| SpringDoc OpenAPI Starter WebMVC UI |     2.2.0     |  
 
 <div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
@@ -65,7 +66,24 @@ Read further for more details.
 
 # TODO List
 
-1. [ ] Unit tests implementation using frameworks: JUnit and Mockito.
+1. [ ] Unit tests for:
+
+   - [ ] Repository layer:
+     * [ ] GolfClubMemberRepository
+     * [ ] RoleDAO
+     * [ ] UserDAO
+   - [ ] Service layer:
+     * [ ] GolfClubMemberService 
+     * [ ] RoleService 
+     * [ ] UserService 
+   - [ ] Controller layer:
+     * [ ] GolfClubMemberController 
+     * [ ] AccessController
+     * [ ] MyGolfClubController
+     * [ ] UserController
+
+
+2. [ ] Integration tests
 
 <div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
