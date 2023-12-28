@@ -69,7 +69,7 @@ Read further for more details.
 1. [ ] Unit tests for:
 
    - [ ] Repository layer:
-     * [ ] GolfClubMemberRepository
+     * [x] ~~GolfClubMemberRepository~~
      * [ ] RoleDAO
      * [ ] UserDAO
    - [ ] Service layer:
