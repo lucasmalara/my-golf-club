@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 
 @Service
 public class GolfClubMemberServiceImpl implements GolfClubMemberService {
@@ -26,6 +27,11 @@ public class GolfClubMemberServiceImpl implements GolfClubMemberService {
     @Override
     public Collection<GolfClubMember> findAllByActivity(boolean isActive) {
         return memberRepository.findAllByActiveMember(isActive);
+    }
+
+    @Override
+    public List<GolfClubMember> findAllByFirstAndLastName(String firstName, String lastName) {
+        return memberRepository.findAllByFirstAndLastName(firstName, lastName);
     }
 
     @Override
