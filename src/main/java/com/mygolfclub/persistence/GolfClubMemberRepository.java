@@ -12,6 +12,6 @@ public interface GolfClubMemberRepository extends JpaRepository<GolfClubMember, 
     List<GolfClubMember> findAllByActiveMember(boolean isActiveMember);
 
     @Query("select m from GolfClubMember m where m.firstName=:firstName and m.lastName=:lastName")
-    List<GolfClubMember> findByFirstAndLastName(@Param("firstName") String firstName,
-                                                @Param("lastName") String lastName);
+    List<GolfClubMember> findAllByFirstAndLastName(@Param("firstName") String firstName,
+                                                   @Param("lastName") String lastName);
 }

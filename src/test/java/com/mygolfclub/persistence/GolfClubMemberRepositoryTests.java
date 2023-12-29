@@ -19,6 +19,7 @@ import org.springframework.test.context.ActiveProfiles;
 import java.util.List;
 import java.util.Optional;
 
+import static com.mygolfclub.utils.GolfClubMemberTestsUtils.memberExample;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace.NONE;
 
@@ -34,30 +35,6 @@ class GolfClubMemberRepositoryTests {
     @Autowired
     GolfClubMemberRepositoryTests(GolfClubMemberRepository memberRepository) {
         this.memberRepository = memberRepository;
-    }
-
-    private static GolfClubMember memberExample(String firstName,
-                                                String lastName,
-                                                String email,
-                                                boolean isActiveMember) {
-        boolean anyNullProperty =
-                firstName == null || lastName == null || email == null;
-        if (anyNullProperty)
-            return memberExample();
-
-        GolfClubMember memberExample = new GolfClubMember();
-        memberExample.setFirstName(firstName);
-        memberExample.setLastName(lastName);
-        memberExample.setEmail(email);
-        memberExample.setActiveMember(isActiveMember);
-        return memberExample;
-    }
-
-    private static GolfClubMember memberExample() {
-        return memberExample("Lorem",
-                "Ipsum",
-                "dolor@sit.amet",
-                true);
     }
 
     @Order(1)
@@ -95,8 +72,9 @@ class GolfClubMemberRepositoryTests {
 
         List<GolfClubMember> all = memberRepository.findAll();
 
-        ListAssert<GolfClubMember> memberListAssert = assertThat(all)
-                .isNotNull();
+        ListAssert<GolfClubMember> memberListAssert =
+                assertThat(all)
+                        .isNotNull();
 
         if (!all.isEmpty())
             memberListAssert.doesNotContain(toSave);
@@ -223,7 +201,8 @@ class GolfClubMemberRepositoryTests {
         memberRepository.save(toFindByFirstAndLastName);
 
         // when
-        List<GolfClubMember> byFirstAndLastName = memberRepository.findByFirstAndLastName(firstName, lastName);
+        List<GolfClubMember> byFirstAndLastName =
+                memberRepository.findAllByFirstAndLastName(firstName, lastName);
 
         // then
         assertThat(byFirstAndLastName)
@@ -248,7 +227,8 @@ class GolfClubMemberRepositoryTests {
     void givenNullFirstAndLastName_whenFindByFirstAndLastName_thenReturnEmptyMembersList(String nullValue) {
 
         // when
-        List<GolfClubMember> byFirstAndLastName = memberRepository.findByFirstAndLastName(nullValue, nullValue);
+        List<GolfClubMember> byFirstAndLastName =
+                memberRepository.findAllByFirstAndLastName(nullValue, nullValue);
 
         // then
         assertThat(byFirstAndLastName)
@@ -316,8 +296,9 @@ class GolfClubMemberRepositoryTests {
 
         List<GolfClubMember> all = memberRepository.findAll();
 
-        ListAssert<GolfClubMember> memberListAssert = assertThat(all)
-                .isNotNull();
+        ListAssert<GolfClubMember> memberListAssert =
+                assertThat(all)
+                        .isNotNull();
 
         if (!all.isEmpty())
             memberListAssert
