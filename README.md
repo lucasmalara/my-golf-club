@@ -73,7 +73,7 @@ Read further for more details.
      * [ ] RoleDAO
      * [ ] UserDAO
    - [ ] Service layer:
-     * [ ] GolfClubMemberService 
+     * [x] ~~GolfClubMemberService~~ 
      * [ ] RoleService 
      * [ ] UserService 
    - [ ] Controller layer:
