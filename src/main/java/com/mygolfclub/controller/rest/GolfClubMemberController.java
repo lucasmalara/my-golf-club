@@ -16,8 +16,8 @@ import org.springframework.hateoas.IanaLinkRelations;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 import static com.mygolfclub.utils.constants.ConstantsProvider.*;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
@@ -28,7 +28,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequestMapping(API)
 @Tag(name = "GolfClubMembers")
 public class GolfClubMemberController {
-
 
     private final GolfClubMemberService memberService;
     private final GolfClubMemberModelAssembler assembler;
@@ -51,17 +50,17 @@ public class GolfClubMemberController {
     @GetMapping("/members")
     public CollectionModel<EntityModel<GolfClubMember>> getMembers(
             @RequestParam(value = "active", required = false) Boolean isActiveMember) {
-        Stream<GolfClubMember> memberStream = memberService.findAll().stream();
-        if (isActiveMember != null) {
-            memberStream = memberStream
-                    .filter(clubMember ->
-                            clubMember.isActiveMember() == isActiveMember);
-        }
-        return CollectionModel
-                .of(memberStream.map(assembler::toModel).toList(),
-                        linkTo(methodOn(GolfClubMemberController.class).getMembers(isActiveMember))
-                                .withSelfRel()
-                );
+        List<EntityModel<GolfClubMember>> entityModelList = memberService.findAll()
+                .stream()
+                .filter(clubMember ->
+                        isActiveMember == null || clubMember.isActiveMember() == isActiveMember)
+                .map(assembler::toModel)
+                .toList();
+
+        return CollectionModel.of(entityModelList,
+                linkTo(methodOn(GolfClubMemberController.class).getMembers(isActiveMember))
+                        .withSelfRel()
+        );
     }
 
 
@@ -100,8 +99,7 @@ public class GolfClubMemberController {
                                     value = VALID_POST_REQUEST_BODY
                             )
                     )
-            )
-            @RequestBody GolfClubMember member) {
+            ) @RequestBody GolfClubMember member) {
         EntityModel<GolfClubMember> entityModel = assembler.toModel(memberService.save(member));
         return ResponseEntity
                 .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
@@ -130,8 +128,7 @@ public class GolfClubMemberController {
                                     value = VALID_PUT_REQUEST_BODY
                             )
                     )
-            )
-            @RequestBody GolfClubMember updatedMember) {
+            ) @RequestBody GolfClubMember updatedMember) {
         EntityModel<GolfClubMember> entityModel = assembler.toModel(
                 Optional.of(memberService.findById(id))
                         .map(memberById -> {
@@ -142,8 +139,7 @@ public class GolfClubMemberController {
                             return memberService.save(memberById);
                         })
                         .orElseThrow(() ->
-                                new GolfClubMemberNotFoundException(String.valueOf(id))
-                        )
+                                new GolfClubMemberNotFoundException(String.valueOf(id)))
         );
         return ResponseEntity
                 .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
