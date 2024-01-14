@@ -45,25 +45,25 @@ public class MyGolfClubController {
 
     @GetMapping("/members/add")
     public String addMember(Model model) {
-        model.addAttribute(MEMBER, new GolfClubMember());
+        model.addAttribute("member", new GolfClubMember());
         return PREFIX_DIR + SAVE_MEMBER_FILE;
     }
 
     @GetMapping("/members/update")
     public String updateMember(@RequestParam("memberId") int id,
                                Model model) {
-        model.addAttribute(MEMBER, memberService.findById(id));
+        model.addAttribute("member", memberService.findById(id));
         return PREFIX_DIR + SAVE_MEMBER_FILE;
     }
 
     @PostMapping("/members/save")
-    public String saveMember(@Valid @ModelAttribute(MEMBER) GolfClubMember model,
+    public String saveMember(@Valid @ModelAttribute("member") GolfClubMember model,
                              BindingResult result) {
-        if (!result.hasErrors()) {
-            memberService.save(model);
-            return "redirect:" + HOME + "/members/list";
-        }
-        return PREFIX_DIR + SAVE_MEMBER_FILE;
+        if (result.hasErrors())
+            return PREFIX_DIR + SAVE_MEMBER_FILE;
+
+        memberService.save(model);
+        return "redirect:" + HOME + "/members/list";
     }
 
     @GetMapping("/members/delete")

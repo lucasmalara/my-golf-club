@@ -11,7 +11,6 @@ public final class ConstantsProvider {
 
     public static final String PREFIX_DIR = "members/";
     public static final String SAVE_MEMBER_FILE = "save-member";
-    public static final String MEMBER = "member";
 
     public static final String VALID_POST_REQUEST_BODY = """
             {

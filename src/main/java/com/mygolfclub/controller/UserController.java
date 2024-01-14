@@ -35,14 +35,15 @@ public class UserController {
                            BindingResult result,
                            Model model) {
         boolean userExists = userService.findByUserName(userModel.getUsername()) != null;
-        if (userExists) {
+        if (userExists)
             model.addAttribute("alreadyTaken", "User already exists.");
-        }
+
         if (!result.hasErrors() && !userExists) {
             userService.save(userModel);
             model.addAttribute("hasBeenAdded", "User has been added.");
             return "add-user-success";
         }
+
         return "add-user";
     }
 
