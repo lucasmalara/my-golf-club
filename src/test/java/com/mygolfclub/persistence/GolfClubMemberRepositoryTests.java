@@ -102,7 +102,7 @@ class GolfClubMemberRepositoryTests {
         // then
         assertThat(all)
                 .isNotNull()
-                .containsSequence(toFind, otherToFind);
+                .containsSubsequence(toFind, otherToFind);
     }
 
     @Order(4)
@@ -172,7 +172,7 @@ class GolfClubMemberRepositoryTests {
         // then
         assertThat(activeMembers)
                 .isNotNull()
-                .containsSequence(expected);
+                .containsSubsequence(expected);
     }
 
     @Order(7)
