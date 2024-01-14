@@ -40,19 +40,20 @@ public class SecurityConfiguration {
     @Bean
     @Order(1)
     public SecurityFilterChain apiFilterChain(HttpSecurity http) throws Exception {
+        String memberEndPointWildCard = API + "/members/**";
         http.securityMatcher(API + "/**")
                 .authorizeHttpRequests(authorize -> authorize
                         // GET
-                        .requestMatchers(GET, MEMBERS_API + "/**")
+                        .requestMatchers(GET, memberEndPointWildCard)
                         .hasRole(EMPLOYEE)
                         // POST
-                        .requestMatchers(POST, MEMBERS_API)
+                        .requestMatchers(POST, API +"members")
                         .hasRole(MODERATOR)
                         // PUT
-                        .requestMatchers(PUT, MEMBERS_API + "/**")
+                        .requestMatchers(PUT, memberEndPointWildCard)
                         .hasRole(ADMIN)
                         // DELETE
-                        .requestMatchers(DELETE, MEMBERS_API + "/**")
+                        .requestMatchers(DELETE, memberEndPointWildCard)
                         .hasRole(ADMIN)
                         .anyRequest().authenticated())
                 .csrf(AbstractHttpConfigurer::disable)

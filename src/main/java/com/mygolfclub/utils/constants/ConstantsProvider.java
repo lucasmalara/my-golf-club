@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 public final class ConstantsProvider {
     public static final String HOME = "/my-golf-club";
     public static final String API = HOME + "/api";
-    public static final String MEMBERS_API = API + "/members";
-
     public static final String PREFIX_DIR = "members/";
     public static final String SAVE_MEMBER_FILE = "save-member";
 
