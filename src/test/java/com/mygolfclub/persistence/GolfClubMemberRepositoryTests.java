@@ -1,10 +1,8 @@
 package com.mygolfclub.persistence;
 
 import com.mygolfclub.entity.member.GolfClubMember;
-import com.mygolfclub.utils.TestsUtils;
 import jakarta.transaction.Transactional;
-import org.assertj.core.api.ListAssert;
-import org.assertj.core.api.OptionalAssert;
+import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -18,9 +16,12 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import static com.mygolfclub.utils.GolfClubMemberTestsUtils.memberExample;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assumptions.assumeThat;
 import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace.NONE;
 
 @AutoConfigureTestDatabase(replace = NONE)
@@ -62,22 +63,17 @@ class GolfClubMemberRepositoryTests {
             GolfClubMember toSave) {
 
         // when
-        Exception e =
-                new TestsUtils<GolfClubMember>().retrieveException(toSave, memberRepository::save);
+        var throwableAssert = assertThatThrownBy(() -> memberRepository.save(toSave));
 
         // then
-        assertThat(e)
-                .isNotNull()
-                .isExactlyInstanceOf(InvalidDataAccessApiUsageException.class);
+        throwableAssert.isExactlyInstanceOf(InvalidDataAccessApiUsageException.class);
 
         List<GolfClubMember> all = memberRepository.findAll();
 
-        ListAssert<GolfClubMember> memberListAssert =
-                assertThat(all)
-                        .isNotNull();
-
-        if (!all.isEmpty())
-            memberListAssert.doesNotContain(toSave);
+        assumeThat(all)
+                .isNotEmpty();
+        assertThat(all)
+                .doesNotContain(toSave);
     }
 
     @Order(3)
@@ -134,13 +130,10 @@ class GolfClubMemberRepositoryTests {
     void givenNullId_whenFindById_thenThrowInvalidDataAccessApiUsageException(Integer id) {
 
         // when
-        Exception e =
-                new TestsUtils<Integer>().retrieveException(id, memberRepository::findById);
+        var throwableAssert = assertThatThrownBy(() -> memberRepository.findById(id));
 
         // then
-        assertThat(e)
-                .isNotNull()
-                .isExactlyInstanceOf(InvalidDataAccessApiUsageException.class);
+        throwableAssert.isExactlyInstanceOf(InvalidDataAccessApiUsageException.class);
     }
 
     @Order(6)
@@ -171,17 +164,15 @@ class GolfClubMemberRepositoryTests {
                         true);
         memberRepository.save(toFindByActivity3);
 
+        var expected = b ? Set.of(toFindByActivity1, toFindByActivity3) : Set.of(toFindByActivity2);
+
         // when
         List<GolfClubMember> activeMembers = memberRepository.findAllByActiveMember(b);
 
         // then
-        ListAssert<GolfClubMember> memberListAssert =
-                assertThat(activeMembers)
-                        .isNotNull();
-        if (b)
-            memberListAssert.containsSequence(toFindByActivity1, toFindByActivity3);
-        else
-            memberListAssert.containsSequence(toFindByActivity2);
+        assertThat(activeMembers)
+                .isNotNull()
+                .containsSequence(expected);
     }
 
     @Order(7)
@@ -256,24 +247,21 @@ class GolfClubMemberRepositoryTests {
         saved.setEmail(updatedEmail);
         GolfClubMember updated = memberRepository.save(saved);
 
-
         // then
         Optional<GolfClubMember> byIdOptional = memberRepository.findById(toSave.getId());
 
-        OptionalAssert<GolfClubMember> memberOptionalAssert =
-                assertThat(byIdOptional)
-                        .isPresent();
+        assertThat(byIdOptional)
+                .isPresent()
+                .containsSame(updated);
 
         GolfClubMember byId = byIdOptional.get();
 
-        assertThat(byId.getLastName())
-                .isEqualTo(updatedLastName);
-
-        assertThat(byId.getEmail())
-                .isEqualTo(updatedEmail);
-
-        memberOptionalAssert
-                .containsSame(updated);
+        Condition<GolfClubMember> havingUpdatedFields =
+                new Condition<>(member ->
+                        member.getLastName().equals(updatedLastName) && member.getEmail().equals(updatedEmail),
+                        "member's updated fields");
+        assertThat(byId)
+                .is(havingUpdatedFields);
     }
 
     @Order(10)
@@ -296,13 +284,10 @@ class GolfClubMemberRepositoryTests {
 
         List<GolfClubMember> all = memberRepository.findAll();
 
-        ListAssert<GolfClubMember> memberListAssert =
-                assertThat(all)
-                        .isNotNull();
-
-        if (!all.isEmpty())
-            memberListAssert
-                    .doesNotContain(toDelete);
+        assumeThat(all)
+                .isNotEmpty();
+        assertThat(all)
+                .doesNotContain(toDelete);
     }
 
     @Order(11)
@@ -316,13 +301,10 @@ class GolfClubMemberRepositoryTests {
         List<GolfClubMember> all = memberRepository.findAll();
 
         // when
-        Exception e =
-                new TestsUtils<GolfClubMember>().retrieveException(toDelete, memberRepository::delete);
+        var throwableAssert = assertThatThrownBy(() -> memberRepository.delete(toDelete));
 
         // then
-        assertThat(e)
-                .isNotNull()
-                .isExactlyInstanceOf(InvalidDataAccessApiUsageException.class);
+        throwableAssert.isExactlyInstanceOf(InvalidDataAccessApiUsageException.class);
 
         assertThat(all)
                 .isNotNull()
@@ -349,11 +331,10 @@ class GolfClubMemberRepositoryTests {
 
         List<GolfClubMember> all = memberRepository.findAll();
 
-        ListAssert<GolfClubMember> memberListAssert = assertThat(all)
-                .isNotNull();
-
-        if (!all.isEmpty())
-            memberListAssert.doesNotContain(toDeleteById);
+        assumeThat(all)
+                .isNotEmpty();
+        assertThat(all)
+                .doesNotContain(toDeleteById);
     }
 
     @Order(13)
@@ -367,13 +348,10 @@ class GolfClubMemberRepositoryTests {
         List<GolfClubMember> all = memberRepository.findAll();
 
         // when
-        Exception e =
-                new TestsUtils<Integer>().retrieveException(id, memberRepository::deleteById);
+        var throwableAssert = assertThatThrownBy(() -> memberRepository.deleteById(id));
 
         // then
-        assertThat(e)
-                .isNotNull()
-                .isExactlyInstanceOf(InvalidDataAccessApiUsageException.class);
+        throwableAssert.isExactlyInstanceOf(InvalidDataAccessApiUsageException.class);
 
         assertThat(all)
                 .isNotNull()
