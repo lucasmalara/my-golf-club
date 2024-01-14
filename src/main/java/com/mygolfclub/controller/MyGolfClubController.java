@@ -11,7 +11,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
-import static com.mygolfclub.utils.constants.ConstantsProvider.*;
+import static com.mygolfclub.utils.constants.ConstantProvider.*;
 
 @Controller
 @RequestMapping(HOME)

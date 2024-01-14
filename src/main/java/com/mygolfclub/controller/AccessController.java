@@ -3,7 +3,7 @@ package com.mygolfclub.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import static com.mygolfclub.utils.constants.ConstantsProvider.*;
+import static com.mygolfclub.utils.constants.ConstantProvider.*;
 
 @Controller
 public class AccessController {

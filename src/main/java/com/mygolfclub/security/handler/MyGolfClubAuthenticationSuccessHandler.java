@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-import static com.mygolfclub.utils.constants.ConstantsProvider.HOME;
+import static com.mygolfclub.utils.constants.ConstantProvider.HOME;
 
 @Component
 public class MyGolfClubAuthenticationSuccessHandler implements AuthenticationSuccessHandler {

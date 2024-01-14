@@ -14,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-import static com.mygolfclub.utils.constants.ConstantsProvider.*;
+import static com.mygolfclub.utils.constants.ConstantProvider.*;
 import static org.springframework.http.HttpMethod.*;
 
 @Configuration

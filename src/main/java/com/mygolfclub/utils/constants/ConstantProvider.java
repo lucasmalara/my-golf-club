@@ -4,7 +4,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class ConstantsProvider {
+public final class ConstantProvider {
     public static final String HOME = "/my-golf-club";
     public static final String API = HOME + "/api";
     public static final String PREFIX_DIR = "members/";
