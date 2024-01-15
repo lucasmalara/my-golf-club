@@ -26,6 +26,7 @@ val versionThymeleafSecExtras: String = "3.1.2.RELEASE"
 val versionOpenAPI: String = "2.3.0"
 val versionLombok: String = "1.18.30"
 val versionMySQLCon: String = "8.2.0"
+val versionSpringSec: String = "6.2.1"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa:$versionSpringBootStarter")
@@ -40,6 +41,7 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j:$versionMySQLCon")
 	annotationProcessor("org.projectlombok:lombok:$versionLombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test:$versionSpringBootStarter")
+	testImplementation("org.springframework.security:spring-security-test:$versionSpringSec")
 }
 
 tasks.withType<Test> {
