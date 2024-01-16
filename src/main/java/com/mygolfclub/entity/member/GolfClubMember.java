@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import org.hibernate.validator.constraints.Length;
 @Getter
 @Setter
 @Builder
+@AllArgsConstructor
 public class GolfClubMember {
 
     @Id
@@ -64,4 +66,9 @@ public class GolfClubMember {
     @NotNull(message = "is required.")
     @Column(name = "active_member")
     private boolean activeMember;
+
+    public GolfClubMember() {
+        // Added no args constructor after providing a builder for this class.
+        // It is used for model creation.
+    }
 }
