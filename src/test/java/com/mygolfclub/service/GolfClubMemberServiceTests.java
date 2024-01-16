@@ -88,10 +88,12 @@ class GolfClubMemberServiceTests {
 
         // given
         GolfClubMember member1 = memberExample();
-        GolfClubMember member2 = memberExample("Mockito",
-                "Poquito",
-                "inject@mock.es",
-                true);
+        GolfClubMember member2 = GolfClubMember.builder()
+                .firstName("Mockito")
+                .lastName("Poquito")
+                .email("inject@mock.es")
+                .activeMember(true)
+                .build();
         List<GolfClubMember> expected = List.of(member1, member2);
 
         // when
@@ -187,14 +189,18 @@ class GolfClubMemberServiceTests {
         // given
         GolfClubMember inactiveMember1 = memberExample();
         inactiveMember1.setActiveMember(false);
-        GolfClubMember activeMember = memberExample("Other",
-                "Member",
-                "other@gmail.com",
-                true);
-        GolfClubMember inactiveMember2 = memberExample("Foo",
-                "Bar",
-                "foo@bar.baz",
-                false);
+        GolfClubMember activeMember = GolfClubMember.builder()
+                .firstName("Other")
+                .lastName("Member")
+                .email("other@gmail.com")
+                .activeMember(true)
+                .build();
+        GolfClubMember inactiveMember2 = GolfClubMember.builder()
+                .firstName("Foo")
+                .lastName("Bar")
+                .email("foo@bar.baz")
+                .activeMember(false)
+                .build();
         List<GolfClubMember> expected =
                 b ? List.of(activeMember) : List.of(inactiveMember1, inactiveMember2);
 

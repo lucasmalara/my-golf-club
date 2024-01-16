@@ -82,18 +82,20 @@ class GolfClubMemberRepositoryTests {
     void givenSavedMembers_whenFindAll_thenReturnMemberListContainsTheseMembersInExactOrder() {
 
         // given
-        GolfClubMember toFind =
-                memberExample("Carol",
-                        "Greatest",
-                        "carol@the.greatest",
-                        false);
+        GolfClubMember toFind = GolfClubMember.builder()
+                .firstName("Carol")
+                .lastName("Greatest")
+                .email("carol@the.greatest")
+                .activeMember(false)
+                .build();
         memberRepository.save(toFind);
 
-        GolfClubMember otherToFind =
-                memberExample("Nicole",
-                        "Enigma",
-                        "nenigma@mydomain.xyz",
-                        true);
+        GolfClubMember otherToFind = GolfClubMember.builder()
+                .firstName("Nicole")
+                .lastName("Enigma")
+                .email("nenigma@mydomain.xyz")
+                .activeMember(true)
+                .build();
         memberRepository.save(otherToFind);
 
         // when
@@ -143,25 +145,28 @@ class GolfClubMemberRepositoryTests {
     void givenSavedMembers_whenFindByActivity_thenReturnMemberListContainsTheseMembersInExactOrder(boolean b) {
 
         // given
-        GolfClubMember toFindByActivity1 =
-                memberExample("Chris",
-                        "Ramzes",
-                        "ramzes@mail.eg",
-                        true);
+        GolfClubMember toFindByActivity1 = GolfClubMember.builder()
+                .firstName("Chris")
+                .lastName("Ramzes")
+                .email("ramzes@mail.eg")
+                .activeMember(true)
+                .build();
         memberRepository.save(toFindByActivity1);
 
-        GolfClubMember toFindByActivity2 =
-                memberExample("Victoria",
-                        "Winner",
-                        "victoria@peace.roma",
-                        false);
+        GolfClubMember toFindByActivity2 = GolfClubMember.builder()
+                .firstName("Victoria")
+                .lastName("Winner")
+                .email("victoria@peace.roma")
+                .activeMember(false)
+                .build();
         memberRepository.save(toFindByActivity2);
 
-        GolfClubMember toFindByActivity3 =
-                memberExample("Micael",
-                        "Stanley",
-                        "mstanley@hotmail.com",
-                        true);
+        GolfClubMember toFindByActivity3 = GolfClubMember.builder()
+                        .firstName("Micael")
+                        .lastName("Stanley")
+                        .email("mstanley@hotmail.com")
+                        .activeMember(true)
+                        .build();
         memberRepository.save(toFindByActivity3);
 
         var expected = b ? Set.of(toFindByActivity1, toFindByActivity3) : Set.of(toFindByActivity2);
@@ -184,11 +189,14 @@ class GolfClubMemberRepositoryTests {
 
         // given
         String email =
-                Character.toLowerCase(firstName.charAt(0)) +
-                        lastName.toLowerCase() + "@my.domain.com";
+                Character.toLowerCase(firstName.charAt(0)) + lastName.toLowerCase() + "@my.domain.com";
 
-        GolfClubMember toFindByFirstAndLastName =
-                memberExample(firstName, lastName, email, false);
+        GolfClubMember toFindByFirstAndLastName = GolfClubMember.builder()
+                        .firstName(firstName)
+                        .lastName(lastName)
+                        .email(email)
+                        .activeMember(false)
+                        .build();
         memberRepository.save(toFindByFirstAndLastName);
 
         // when
@@ -233,11 +241,12 @@ class GolfClubMemberRepositoryTests {
     void givenSavedMember_whenUpdate_thenReturnUpdatedMember() {
 
         // given
-        GolfClubMember toSave =
-                memberExample("Gallus",
-                        "Known",
-                        "gallus@known.net",
-                        true);
+        GolfClubMember toSave = GolfClubMember.builder()
+                .firstName("Gallus")
+                .lastName("Known")
+                .email("gallus@known.net")
+                .activeMember(true)
+                .build();
         GolfClubMember saved = memberRepository.save(toSave);
 
         // when

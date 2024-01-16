@@ -46,8 +46,18 @@ class GolfClubMemberControllerTests {
 
         // given
         GolfClubMember member1 = memberExample();
-        GolfClubMember member2 = memberExample("Jessy", "Pinkman", "pink@man.com", true);
-        GolfClubMember member3 = memberExample("Jimmy", "McGill", "betterc@llsaul.com", false);
+        GolfClubMember member2 = GolfClubMember.builder()
+                .firstName("Jessy")
+                .lastName("Pinkman")
+                .email("pink@man.com")
+                .activeMember(true)
+                .build();
+        GolfClubMember member3 = GolfClubMember.builder()
+                .firstName("Jimmy")
+                .lastName("McGill")
+                .email("betterc@llsaul.com")
+                .activeMember(false)
+                .build();
         given(memberServiceMock.findAll())
                 .willReturn(List.of(member1, member2, member3));
 
