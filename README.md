@@ -20,7 +20,6 @@ Read further for more details.
 
 - [Features](#features)
 - [Project Details](#project-details)
-- [TODO List](#todo-list)
 - [Run Project From Source](#run-project-from-source)
 - [Screenshots](#screenshots)
 - [API Reference](#api-reference)
@@ -59,31 +58,6 @@ Read further for more details.
 | SpringDoc OpenAPI Starter WebMVC UI |     2.3.0     |  
 |          MySQL Connector/J          |     8.2.0     | 
 |               Lombok                |    1.18.30    |
-
-<div align='right'>
-    <a href="#table-of-content">Go back to the Table Of Content</a>
-</div>
-
-# TODO List
-
-1. [ ] Unit tests for:
-
-   - [ ] Repository layer:
-     * [x] ~~GolfClubMemberRepository~~
-     * [ ] RoleDAO
-     * [ ] UserDAO
-   - [ ] Service layer:
-     * [x] ~~GolfClubMemberService~~ 
-     * [ ] RoleService 
-     * [ ] UserService 
-   - [ ] Controller layer:
-     * [ ] GolfClubMemberController 
-     * [ ] AccessController
-     * [ ] MyGolfClubController
-     * [ ] UserController
-
-
-2. [ ] Integration tests
 
 <div align='right'>
     <a href="#table-of-content">Go back to the Table Of Content</a>
