@@ -1,9 +1,12 @@
 package com.mygolfclub.persistence;
 
 import com.mygolfclub.entity.member.GolfClubMember;
+import com.mygolfclub.utils.GolfClubMemberExtension;
+import com.mygolfclub.utils.InjectMember;
 import jakarta.transaction.Transactional;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.NullSource;
@@ -16,14 +19,13 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
-import static com.mygolfclub.utils.GolfClubMemberTestsUtils.memberExample;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assumptions.assumeThat;
 import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace.NONE;
 
+@ExtendWith(GolfClubMemberExtension.class)
 @AutoConfigureTestDatabase(replace = NONE)
 @ActiveProfiles("test")
 @Transactional
@@ -32,10 +34,12 @@ import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTest
 class GolfClubMemberRepositoryTests {
 
     private final GolfClubMemberRepository memberRepository;
+    private final GolfClubMember memberExample;
 
-    @Autowired
-    GolfClubMemberRepositoryTests(GolfClubMemberRepository memberRepository) {
+    GolfClubMemberRepositoryTests(@Autowired GolfClubMemberRepository memberRepository,
+                                  @InjectMember GolfClubMember memberExample) {
         this.memberRepository = memberRepository;
+        this.memberExample = memberExample;
     }
 
     @Order(1)
@@ -44,7 +48,7 @@ class GolfClubMemberRepositoryTests {
     void givenMember_whenSaveMember_thenReturnSameMember() {
 
         // given
-        GolfClubMember toSave = memberExample();
+        GolfClubMember toSave = memberExample.deepCopy();
 
         // when
         GolfClubMember savedMember = memberRepository.save(toSave);
@@ -113,7 +117,7 @@ class GolfClubMemberRepositoryTests {
     void givenSavedMember_whenFindById_thenReturnSameMember() {
 
         // given
-        GolfClubMember toFindById = memberExample();
+        GolfClubMember toFindById = memberExample.deepCopy();
         memberRepository.save(toFindById);
 
         // when
@@ -169,7 +173,7 @@ class GolfClubMemberRepositoryTests {
                         .build();
         memberRepository.save(toFindByActivity3);
 
-        var expected = b ? Set.of(toFindByActivity1, toFindByActivity3) : Set.of(toFindByActivity2);
+        var expected = b ? List.of(toFindByActivity1, toFindByActivity3) : List.of(toFindByActivity2);
 
         // when
         List<GolfClubMember> activeMembers = memberRepository.findAllByActiveMember(b);
@@ -279,7 +283,7 @@ class GolfClubMemberRepositoryTests {
     void givenSavedMember_whenDeleteMember_thenMemberIsRemoved() {
 
         // given
-        GolfClubMember toDelete = memberExample();
+        GolfClubMember toDelete = memberExample.deepCopy();
         memberRepository.save(toDelete);
 
         // when
@@ -326,7 +330,7 @@ class GolfClubMemberRepositoryTests {
     void givenSavedMember_whenDeleteMemberById_thenMemberIsRemoved() {
 
         // given
-        GolfClubMember toDeleteById = memberExample();
+        GolfClubMember toDeleteById = memberExample.deepCopy();
         memberRepository.save(toDeleteById);
 
         // when
