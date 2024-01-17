@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
-import static com.mygolfclub.utils.GolfClubMemberTestsUtils.memberExample;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
@@ -294,7 +293,7 @@ class GolfClubMemberServiceTests {
         GolfClubMember byId = memberService.findById(example.getId());
         then(memberRepositoryMock)
                 .should()
-                .findById(memberExample().getId());
+                .findById(memberExample.getId());
 
         Condition<GolfClubMember> havingExpectedId =
                 new Condition<>(member -> member.getId() == example.getId(),
