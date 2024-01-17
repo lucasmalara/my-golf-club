@@ -4,11 +4,12 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.apache.commons.lang3.SerializationUtils;
 import org.hibernate.validator.constraints.Length;
+
+import java.io.Serial;
+import java.io.Serializable;
 
 
 @Entity
@@ -17,7 +18,10 @@ import org.hibernate.validator.constraints.Length;
 @Setter
 @Builder
 @AllArgsConstructor
-public class GolfClubMember {
+public class GolfClubMember implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -71,4 +75,9 @@ public class GolfClubMember {
         // Added no args constructor after providing a builder for this class.
         // It is used for model creation.
     }
+
+    public GolfClubMember deepCopy() {
+        return SerializationUtils.clone(this);
+    }
+
 }
