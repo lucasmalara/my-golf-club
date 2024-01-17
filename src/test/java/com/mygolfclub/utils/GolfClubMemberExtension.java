@@ -11,15 +11,6 @@ import java.util.Optional;
 
 public class GolfClubMemberExtension implements ParameterResolver {
 
-    private static GolfClubMember createExample() {
-        return GolfClubMember.builder()
-                .firstName("Lorem")
-                .lastName("Ipsum")
-                .email("dolor@sit.amet")
-                .activeMember(true)
-                .build();
-    }
-
     @Override
     public boolean supportsParameter(ParameterContext paramContext, ExtensionContext extContext)
             throws ParameterResolutionException {
