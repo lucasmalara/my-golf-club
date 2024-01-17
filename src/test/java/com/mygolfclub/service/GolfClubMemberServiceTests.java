@@ -4,6 +4,8 @@ import com.mygolfclub.entity.member.GolfClubMember;
 import com.mygolfclub.exception.GolfClubMemberNotFoundException;
 import com.mygolfclub.persistence.GolfClubMemberRepository;
 import com.mygolfclub.service.member.GolfClubMemberServiceImpl;
+import com.mygolfclub.utils.GolfClubMemberExtension;
+import com.mygolfclub.utils.InjectMember;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,6 +31,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.BDDMockito.*;
 
+@ExtendWith(GolfClubMemberExtension.class)
 @ExtendWith(MockitoExtension.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class GolfClubMemberServiceTests {
@@ -39,13 +42,19 @@ class GolfClubMemberServiceTests {
     @InjectMocks
     private GolfClubMemberServiceImpl memberService;
 
+    private final GolfClubMember memberExample;
+
+    GolfClubMemberServiceTests(@InjectMember GolfClubMember memberExample) {
+        this.memberExample = memberExample;
+    }
+
     @Order(1)
     @Test
     @DisplayName("Testing member save service method.")
     void givenMember_whenSaveMember_thenReturnSameMember() {
 
         // given
-        GolfClubMember toSave = memberExample();
+        GolfClubMember toSave = memberExample.deepCopy();
 
         // when
         when(memberRepositoryMock.save(toSave))
@@ -87,7 +96,7 @@ class GolfClubMemberServiceTests {
     void givenMembers_whenFindAll_thenReturnTheseMembers() {
 
         // given
-        GolfClubMember member1 = memberExample();
+        GolfClubMember member1 = memberExample.deepCopy();
         GolfClubMember member2 = GolfClubMember.builder()
                 .firstName("Mockito")
                 .lastName("Poquito")
@@ -139,7 +148,7 @@ class GolfClubMemberServiceTests {
     void givenId_whenFindById_thenReturnMemberWithExactId(int id) {
 
         // given
-        GolfClubMember toFindById = memberExample();
+        GolfClubMember toFindById = memberExample.deepCopy();
         toFindById.setId(id);
 
         // when
@@ -187,7 +196,7 @@ class GolfClubMemberServiceTests {
     void givenBoolean_whenFindAllByActiveMember_thenReturnExpectedMemberList(boolean b) {
 
         // given
-        GolfClubMember inactiveMember1 = memberExample();
+        GolfClubMember inactiveMember1 = memberExample.deepCopy();
         inactiveMember1.setActiveMember(false);
         GolfClubMember activeMember = GolfClubMember.builder()
                 .firstName("Other")
@@ -226,18 +235,18 @@ class GolfClubMemberServiceTests {
     void givenFirstAndLastName_whenFindAllByFirstAndLastName_thenReturnExpectedMemberList(int bound) {
 
         // given
-        GolfClubMember memberExample = memberExample();
-        final String firstName = memberExample.getFirstName();
-        final String lastName = memberExample.getLastName();
+        GolfClubMember example = memberExample.deepCopy();
+        final String firstName = example.getFirstName();
+        final String lastName = example.getLastName();
 
         List<GolfClubMember> expected = new ArrayList<>();
         IntStream.rangeClosed(1, bound).forEach(i -> {
             GolfClubMember member = new GolfClubMember();
-            memberExample.setId(i);
+            member.setId(i);
             member.setFirstName(firstName);
             member.setLastName(lastName);
             member.setEmail(member.getEmail());
-            expected.add(memberExample);
+            expected.add(member);
         });
 
         // when
@@ -262,10 +271,10 @@ class GolfClubMemberServiceTests {
     void givenSavedMember_whenUpdate_thenMemberReplaced() {
 
         // given
-        GolfClubMember memberExample = memberExample();
-        given(memberRepositoryMock.save(memberExample))
-                .willReturn(memberExample);
-        GolfClubMember toUpdate = memberService.save(memberExample);
+        GolfClubMember example = memberExample.deepCopy();
+        given(memberRepositoryMock.save(example))
+                .willReturn(example);
+        GolfClubMember toUpdate = memberService.save(example);
 
         // when
         toUpdate.setFirstName("UpFirstName");
@@ -273,22 +282,22 @@ class GolfClubMemberServiceTests {
         toUpdate.setEmail("updated@email.com");
         when(memberRepositoryMock.save(toUpdate))
                 .thenReturn(toUpdate);
-        when(memberRepositoryMock.findById(memberExample.getId()))
+        when(memberRepositoryMock.findById(example.getId()))
                 .thenReturn(Optional.of(toUpdate));
         memberService.save(toUpdate);
 
         // then
         then(memberRepositoryMock)
                 .should(times(2))
-                .save(argThat(toSave -> toSave.getId() == memberExample.getId()));
+                .save(argThat(toSave -> toSave.getId() == example.getId()));
 
-        GolfClubMember byId = memberService.findById(memberExample.getId());
+        GolfClubMember byId = memberService.findById(example.getId());
         then(memberRepositoryMock)
                 .should()
                 .findById(memberExample().getId());
 
         Condition<GolfClubMember> havingExpectedId =
-                new Condition<>(member -> member.getId() == memberExample.getId(),
+                new Condition<>(member -> member.getId() == example.getId(),
                         "id equals expected");
         assertThat(byId)
                 .isNotNull()
@@ -302,10 +311,10 @@ class GolfClubMemberServiceTests {
     void givenId_whenDeleteById_thenMemberRemoved() {
 
         // given
-        GolfClubMember memberExample = memberExample();
-        given(memberRepositoryMock.save(memberExample))
-                .willReturn(memberExample);
-        GolfClubMember saved = memberService.save(memberExample);
+        GolfClubMember example = memberExample.deepCopy();
+        given(memberRepositoryMock.save(example))
+                .willReturn(example);
+        GolfClubMember saved = memberService.save(example);
         int givenId = saved.getId();
 
         // when
@@ -317,7 +326,7 @@ class GolfClubMemberServiceTests {
         // then
         then(memberRepositoryMock)
                 .should()
-                .deleteById(memberExample.getId());
+                .deleteById(example.getId());
 
         assertThatThrownBy(() -> memberService.findById(givenId))
                 .isExactlyInstanceOf(GolfClubMemberNotFoundException.class);
