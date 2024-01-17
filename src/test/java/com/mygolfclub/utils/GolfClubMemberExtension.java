@@ -29,6 +29,7 @@ public class GolfClubMemberExtension implements ParameterResolver {
                 .firstName(injectMember.firstName())
                 .lastName(injectMember.lastName())
                 .email(injectMember.email())
+                .activeMember(injectMember.active())
                 .build();
     }
 }
