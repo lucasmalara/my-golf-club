@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ParameterResolutionException;
 import org.junit.jupiter.api.extension.ParameterResolver;
 
 import java.lang.reflect.Parameter;
+import java.util.Optional;
 
 public class GolfClubMemberExtension implements ParameterResolver {
 
@@ -29,6 +30,14 @@ public class GolfClubMemberExtension implements ParameterResolver {
     @Override
     public Object resolveParameter(ParameterContext paramContext, ExtensionContext extContext)
             throws ParameterResolutionException {
-        return createExample();
+        Optional<InjectMember> injectMemberOptional = paramContext.findAnnotation(InjectMember.class);
+        assert injectMemberOptional.isPresent();
+
+        InjectMember injectMember = injectMemberOptional.get();
+        return GolfClubMember.builder()
+                .firstName(injectMember.firstName())
+                .lastName(injectMember.lastName())
+                .email(injectMember.email())
+                .build();
     }
 }
