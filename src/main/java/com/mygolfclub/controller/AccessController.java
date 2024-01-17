@@ -15,11 +15,11 @@ public class AccessController {
 
     @GetMapping("/login")
     public String showLoginPage() {
-        return "login";
+        return PREFIX_DIR_USERS + "login";
     }
 
     @GetMapping("/access-denied")
     public String showAccessDeniedPage() {
-        return "access-denied";
+        return PREFIX_DIR_USERS + "access-denied";
     }
 }

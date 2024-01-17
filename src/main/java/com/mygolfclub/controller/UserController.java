@@ -27,7 +27,7 @@ public class UserController {
     @GetMapping("/add")
     public String addUser(Model model) {
         model.addAttribute("user", new UserModel());
-        return "add-user";
+        return PREFIX_DIR_USERS + "add-user";
     }
 
     @PostMapping("/save")
@@ -41,10 +41,10 @@ public class UserController {
         if (!result.hasErrors() && !userExists) {
             userService.save(userModel);
             model.addAttribute("hasBeenAdded", "User has been added.");
-            return "add-user-success";
+            return PREFIX_DIR_USERS + "add-user-success";
         }
 
-        return "add-user";
+        return PREFIX_DIR_USERS + "add-user";
     }
 
     @InitBinder

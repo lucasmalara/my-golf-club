@@ -26,41 +26,41 @@ public class MyGolfClubController {
 
     @GetMapping
     public String showHomePage() {
-        return PREFIX_DIR + "home";
+        return PREFIX_DIR_MEMBERS + "home";
     }
 
     @GetMapping("/members/list")
     public String showMembers(Model model) {
         model.addAttribute("activeOnly", false);
         model.addAttribute("members", memberService.findAll());
-        return PREFIX_DIR + "members-list";
+        return PREFIX_DIR_MEMBERS + "members-list";
     }
 
     @GetMapping("/members/list/active")
     public String showActiveMembers(Model model) {
         model.addAttribute("activeOnly", true);
         model.addAttribute("members", memberService.findAllByActivity(true));
-        return PREFIX_DIR + "members-list";
+        return PREFIX_DIR_MEMBERS + "members-list";
     }
 
     @GetMapping("/members/add")
     public String addMember(Model model) {
         model.addAttribute("member", new GolfClubMember());
-        return PREFIX_DIR + SAVE_MEMBER_FILE;
+        return PREFIX_DIR_MEMBERS + SAVE_MEMBER_FILE;
     }
 
     @GetMapping("/members/update")
     public String updateMember(@RequestParam("memberId") int id,
                                Model model) {
         model.addAttribute("member", memberService.findById(id));
-        return PREFIX_DIR + SAVE_MEMBER_FILE;
+        return PREFIX_DIR_MEMBERS + SAVE_MEMBER_FILE;
     }
 
     @PostMapping("/members/save")
     public String saveMember(@Valid @ModelAttribute("member") GolfClubMember model,
                              BindingResult result) {
         if (result.hasErrors())
-            return PREFIX_DIR + SAVE_MEMBER_FILE;
+            return PREFIX_DIR_MEMBERS + SAVE_MEMBER_FILE;
 
         memberService.save(model);
         return "redirect:" + HOME + "/members/list";
