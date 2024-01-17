@@ -5,8 +5,11 @@ import com.mygolfclub.assembler.GolfClubMemberModelAssembler;
 import com.mygolfclub.controller.rest.GolfClubMemberController;
 import com.mygolfclub.entity.member.GolfClubMember;
 import com.mygolfclub.service.member.GolfClubMemberService;
+import com.mygolfclub.utils.GolfClubMemberExtension;
+import com.mygolfclub.utils.InjectMember;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -15,7 +18,6 @@ import org.springframework.test.web.servlet.ResultActions;
 
 import java.util.List;
 
-import static com.mygolfclub.utils.GolfClubMemberTestsUtils.memberExample;
 import static com.mygolfclub.utils.constants.ConstantProvider.API;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
@@ -25,6 +27,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@ExtendWith(GolfClubMemberExtension.class)
 @WebMvcTest(GolfClubMemberController.class)
 class GolfClubMemberControllerTests {
     private final MockMvc mvc;
@@ -33,11 +36,14 @@ class GolfClubMemberControllerTests {
     private GolfClubMemberService memberServiceMock;
     @MockBean
     private GolfClubMemberModelAssembler modelAssemblerMock;
-
-    @Autowired
-    GolfClubMemberControllerTests(MockMvc mvc, ObjectMapper mapper) {
+    private final GolfClubMember memberExample;
+    
+    GolfClubMemberControllerTests(@Autowired MockMvc mvc,
+                                  @Autowired ObjectMapper mapper,
+                                  @InjectMember GolfClubMember memberExample) {
         this.mvc = mvc;
         this.mapper = mapper;
+        this.memberExample = memberExample;
     }
 
     @Test
@@ -45,7 +51,7 @@ class GolfClubMemberControllerTests {
     void givenMembers_whenGetMembers_thenStatusIsUnauthorized() throws Exception {
 
         // given
-        GolfClubMember member1 = memberExample();
+        GolfClubMember member1 = memberExample.deepCopy();
         GolfClubMember member2 = GolfClubMember.builder()
                 .firstName("Jessy")
                 .lastName("Pinkman")
@@ -74,13 +80,13 @@ class GolfClubMemberControllerTests {
     void givenId_whenGetMember_thenStatusIsUnauthorized() throws Exception {
 
         // given
-        GolfClubMember memberExample = memberExample();
-        given(memberServiceMock.findById(memberExample.getId()))
-                .willReturn(memberExample);
+        GolfClubMember example = memberExample.deepCopy();
+        given(memberServiceMock.findById(example.getId()))
+                .willReturn(example);
 
         // when
         ResultActions action =
-                mvc.perform(get(API + "/members/{memberId}", memberExample.getId()));
+                mvc.perform(get(API + "/members/{memberId}", example.getId()));
 
         // then
         action.andExpect(status().isUnauthorized())
@@ -92,14 +98,14 @@ class GolfClubMemberControllerTests {
     void givenMember_whenPostMember_thenStatusIsForbidden() throws Exception {
 
         // given
-        GolfClubMember memberExample = memberExample();
+        GolfClubMember example = memberExample.deepCopy();
         given(memberServiceMock.save(any(GolfClubMember.class)))
                 .willAnswer(invocation -> invocation.getArgument(0, GolfClubMember.class));
 
         // when
         ResultActions action = mvc.perform(post(API + "/members")
                 .accept(APPLICATION_JSON)
-                .content(mapper.writeValueAsString(memberExample)));
+                .content(mapper.writeValueAsString(example)));
 
         // then
         action.andExpect(status().isForbidden())
@@ -111,21 +117,21 @@ class GolfClubMemberControllerTests {
     void givenIdAndMember_whenPutMember_thenStatusIsForbidden() throws Exception {
 
         // given
-        GolfClubMember memberExample = memberExample();
-        given(memberServiceMock.findById(memberExample.getId()))
-                .willReturn(memberExample);
+        GolfClubMember example = memberExample.deepCopy();
+        given(memberServiceMock.findById(example.getId()))
+                .willReturn(example);
         given(memberServiceMock.save(any(GolfClubMember.class)))
                 .willAnswer(invocation -> invocation.getArgument(0, GolfClubMember.class));
 
-        memberExample.setFirstName("Nacho");
-        memberExample.setLastName("Varga");
-        memberExample.setEmail("n@v.mx");
-        memberExample.setActiveMember(true);
+        example.setFirstName("Nacho");
+        example.setLastName("Varga");
+        example.setEmail("n@v.mx");
+        example.setActiveMember(true);
 
         // when
-        ResultActions action = mvc.perform(put(API + "/members/{memberId}", memberExample.getId())
+        ResultActions action = mvc.perform(put(API + "/members/{memberId}", example.getId())
                 .accept(APPLICATION_JSON)
-                .content(mapper.writeValueAsString(memberExample)));
+                .content(mapper.writeValueAsString(example)));
 
         // then
         action.andExpect(status().isForbidden())
